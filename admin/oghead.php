@@ -41,14 +41,26 @@ font-size: 16px;">  <a href="login.html" class="btn btn-danger square-btn-adjust
 
 <!--                          -->
 					<li>
-                        <a  href="employee.php"><i class="fa fa-user fa-3x"></i> REGISTER</a>
+                        <a  href="inemployee.php"><i class="fa fa-user fa-3x"></i> REGISTER</a>
                     </li>
                     <li>
-                        <a  href="viewemployee.php"><i class="fa fa-user fa-3x"></i> VIEW</a>
+                        <a  href="incategory.php"><i class="fa fa-user fa-3x"></i> CATEGORY ENTER</a>
+                    </li>
+                    <li>
+                        <a  href="initem.php"><i class="fa fa-user fa-3x"></i>ITEM ENTER</a>
+                    </li>
+                    <li>
+                        <a  href="outemployee.php"><i class="fa fa-table fa-3x"></i>REGISTER VIEW</a>
+                    </li>
+                    <li>
+                        <a  href="outcategory.php"><i class="fa fa-table fa-3x"></i>CATEGORY VIEW</a>
+                    </li>
+                    <li>
+                        <a  href="outitem.php"><i class="fa fa-table fa-3x"></i>ITEM VIEW</a>
                     </li>
 <!--                          -->
 
-
+            <!-- 
                     <li>
                         <a  href="district.php"><i class="fa fa-dashboard fa-3x"></i> DISTRICT</a>
                     </li>
@@ -64,7 +76,7 @@ font-size: 16px;">  <a href="login.html" class="btn btn-danger square-btn-adjust
                       <li  >
                         <a  href="billpreparation.php"><i class="fa fa-table fa-3x"></i> BILL PREPARATION</a>
                     </li>
-                   
+            -->
                 </ul>
                
             </div>
