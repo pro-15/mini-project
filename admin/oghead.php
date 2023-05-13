@@ -41,22 +41,30 @@ font-size: 16px;">  <a href="login.html" class="btn btn-danger square-btn-adjust
 
 <!--                          -->
 					<li>
-                        <a  href="inemployee.php"><i class="fa fa-user fa-3x"></i> REGISTER</a>
+                        <a  href="in-emp.php"><i class="fa fa-user fa-3x"></i> REGISTER</a>
                     </li>
                     <li>
-                        <a  href="incategory.php"><i class="fa fa-user fa-3x"></i> CATEGORY ENTER</a>
+                        <a  href="in-empimg.php"><i class="fa fa-user fa-3x"></i> IMAGE REGISTER</a>
                     </li>
                     <li>
-                        <a  href="initem.php"><i class="fa fa-user fa-3x"></i>ITEM ENTER</a>
+                        <a  href="in-cat.php"><i class="fa fa-user fa-3x"></i> CATEGORY ENTER</a>
                     </li>
                     <li>
-                        <a  href="outemployee.php"><i class="fa fa-table fa-3x"></i>REGISTER VIEW</a>
+                        <a  href="in-item.php"><i class="fa fa-user fa-3x"></i>ITEM ENTER</a>
+                    </li>
+
+
+                    <li>
+                        <a  href="out-emp.php"><i class="fa fa-table fa-3x"></i>REGISTER VIEW</a>
                     </li>
                     <li>
-                        <a  href="outcategory.php"><i class="fa fa-table fa-3x"></i>CATEGORY VIEW</a>
+                        <a  href="out-empimg.php"><i class="fa fa-table fa-3x"></i> IMAGE VIEW</a>
                     </li>
                     <li>
-                        <a  href="outitem.php"><i class="fa fa-table fa-3x"></i>ITEM VIEW</a>
+                        <a  href="out-cat.php"><i class="fa fa-table fa-3x"></i>CATEGORY VIEW</a>
+                    </li>
+                    <li>
+                        <a  href="out-item.php"><i class="fa fa-table fa-3x"></i>ITEM VIEW</a>
                     </li>
 <!--                          -->
 
