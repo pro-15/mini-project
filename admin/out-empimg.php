@@ -44,7 +44,7 @@ $dao=new DataAccess();
     $config=array(
         'srno'=>true,
         'hiddenfields'=>array('eid'),
-        'images'=>array('field'=>array('eimage'), 'path'=>array('../uploads')),
+        'images'=>array(array('field'=>'eimage', 'path'=>'../uploads/', 'attributes' => array('height' => '100'))),
         
         
     );
