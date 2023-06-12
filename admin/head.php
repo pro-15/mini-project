@@ -20,7 +20,7 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar">toggle</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
@@ -38,7 +38,7 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				    <li class="text-center">
-                        <img src="assets/img/hosp_logo.png" class="user-image img-responsive"/>
+                        <img src="assets/img/fox.png" class="user-image img-responsive"/>
 					</li>
 					<li>
                         <a  href="in-emp.php"><i class="fa fa-user fa-3x"></i> REGISTER</a>
