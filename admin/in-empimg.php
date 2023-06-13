@@ -72,38 +72,38 @@ echo $file->errors();
 </head>
 <body>
 
- <form action="" method="POST" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
 
-<div class="row">
-                    <div class="col-md-6">
-Employee name:
+    <div class="row">
+        <div class="col-md-6">
+            Employee name:
 
-<?= $form->textBox('ename',array('class'=>'form-control')); ?>
-<?= $validator->error('ename'); ?>
+            <?= $form->textBox('ename',array('class'=>'form-control')); ?>
+            <?= $validator->error('ename'); ?>
 
-</div>
-</div>
-<div class="row">
-                    <div class="col-md-6">
-Employee Age:
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            Employee Age:
 
-<?= $form->textBox('eage',array('class'=>'form-control')); ?>
-<?= $validator->error('eage'); ?>
+            <?= $form->textBox('eage',array('class'=>'form-control')); ?>
+            <?= $validator->error('eage'); ?>
 
-</div>
-</div>
-<div class="row">
-                    <div class="col-md-6">
-Bimage:
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            Image:
 
-<?= $form->fileField('eimage',array('class'=>'form-control')); ?>
-<span style="color:red;"><?= $validator->error('eimage'); ?></span>
+            <?= $form->fileField('eimage',array('class'=>'form-control')); ?>
+            <span style="color:red;"><?= $validator->error('eimage'); ?></span>
 
-</div>
-</div>
+        </div>
+    </div>
 
-<button type="submit" name="insert">Submit</button>
-</form>
+    <button type="submit" name="insert">Submit</button>
+    </form>
 
 
 </body>

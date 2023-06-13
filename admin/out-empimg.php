@@ -1,12 +1,4 @@
 <html>
-<head>
-    <style>
-        tr:nth-child(even) {
-            background-color: #f0f0f0;
-        }
-    </style>
-</head>
-<body>
 <?php require('../config/autoload.php'); ?>
 
 <?php

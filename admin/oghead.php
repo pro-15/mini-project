@@ -36,7 +36,7 @@ font-size: 16px;">  <a href="login.html" class="btn btn-danger square-btn-adjust
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="assets/img/hosp_logo.png" class="user-image img-responsive"/>
+                    <img src="assets/img/fox.png" class="user-image img-responsive"/>
 					</li>
 				
 
