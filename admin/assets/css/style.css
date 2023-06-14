@@ -13,7 +13,7 @@
     GENERAL  STYLES    
     =============================================*/
     body {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Varela Round', sans-serif;
     }
     
     #wrapper {
@@ -357,7 +357,8 @@
      
      @media(min-width:768px) {
          #page-wrapper{
-                   margin: 0 0 0 200px;
+            margin: 0 0 0 0px;
+            /* margin: 0 0 0 200px; */
             padding: 15px 30px;
             min-height: 1200px;
             

@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OP Clinic</title>
+    <title>OPM Clinic</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <!-- Logo -->
     <link href="assets/img/logo.png" rel="icon" />
 	<!-- BOOTSTRAP STYLES-->
@@ -13,7 +14,10 @@
         <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' >
+   
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 </head>
 <body>
     <div id="wrapper">
@@ -35,7 +39,7 @@
             </div>
         </nav>   
         <!-- /. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
+        <!-- <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				    <li class="text-center">
@@ -67,7 +71,10 @@
                     </li>
                 </ul>
             </div>
-        </nav>  
+        </nav>   -->
         <!-- /. NAV SIDE  -->
     <div id="page-wrapper" >
         <div id="page-inner">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Illum expedita placeat reprehenderit ipsa voluptatem laudantium adipisci recusandae natus,
+            blanditiis cumque magnam, labore, consequuntur maiores error quibusdam dicta aliquam eveniet officiis.
