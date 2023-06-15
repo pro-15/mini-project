@@ -3,8 +3,8 @@
 
 //your project path goes here
 define("BASE_URL","http://localhost/mini-project/");
-//define("BASE_PATH","c:wamp64/www/mini-project/");
-define("BASE_PATH","c:xampp/htdocs/mini-project/");
+define("BASE_PATH","c:wamp64/www/mini-project/");
+//define("BASE_PATH","c:xampp/htdocs/mini-project/");
 
 //set your timezone here
 date_default_timezone_set('asia/kolkata');

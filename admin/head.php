@@ -11,6 +11,7 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
         <!-- CUSTOM STYLES-->
     <link href="assets/css/style.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
@@ -29,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Binary admin</a> 
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="50px"></a> 
             </div>
             <div style="color: white;
                 padding: 15px 50px 5px 50px;

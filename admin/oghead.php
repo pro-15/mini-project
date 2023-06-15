@@ -42,7 +42,7 @@ font-size: 16px;">  <a href="login.html" class="btn btn-danger square-btn-adjust
 
 <!--                          -->
 					<li>
-                        <a  href="in-emp.php"><i class="fa fa-user fa-3x"></i> REGISTER</a>
+                        <a  href="in-emp.php"><img src="assets/img/stethoscope-solid.svg" style="width:3em;"> REGISTER</a>
                     </li>
                     <li>
                         <a  href="in-empimg.php"><i class="fa fa-user fa-3x"></i> IMAGE REGISTER</a>
