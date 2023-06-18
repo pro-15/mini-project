@@ -24,7 +24,7 @@
 <body>
     <div id="wrapper">
         <!-- /. NAV TOP  -->
-        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0;">
             <div class="navbar-header">
                 
                 <a class="navbar-brand" href="index.html"><img src="assets/img/banner.png" style="height:100%"></a> 
@@ -34,7 +34,7 @@
                 float: right;
                 font-size: 50px;
                 height:100%;">
-                <a href="login.html" class="btn btn-defult square-btn-adjust">Sign-in</a>
+                <a href="login.html" class="btn btn-defult square-btn-adjust">Sign-in/Register</a>
             </div>
         </nav>   
         <!-- /. NAV TOP  -->
@@ -43,3 +43,4 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Illum expedita placeat reprehenderit ipsa voluptatem laudantium adipisci recusandae natus,
             blanditiis cumque magnam, labore, consequuntur maiores error quibusdam dicta aliquam eveniet officiis.
+            <br><br>

@@ -24,13 +24,13 @@
     #page-wrapper {
         padding: 15px 15px;
         min-height: 600px;
-        background-image: linear-gradient(#aaffff,#60ffff);
+        background-image: linear-gradient(#aaffff,#aaaa6a);
        
     }
     #page-inner {
         width:100%;
         margin:10px 20px 10px 0px;
-        background-color:#f3f3f3!important;
+        background-color:#f6fdf6!important;
         padding:10px;
         min-height:1200px;
         border-radius: 10px;
@@ -316,6 +316,40 @@
     color:#fff;
     
     }
+
+    /*
+    Bottom bar
+    Bottom bar
+    Bottom bar 
+    */
+
+    .navbar-down {
+        background-image: linear-gradient(#aaaa6a, #442200);
+        color:white;
+        display :flex;
+        flex:1;
+        flex-direction: column;
+        padding:1em;
+
+    }
+    .navbar-down > ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .addr {
+        width: fit-content;
+        display: flex;
+    }
+    .addr-in {
+        padding-left: 2px;
+    }
+
+    /*
+    Bottom bar
+    Bottom bar
+    Bottom bar 
+    */
     
     .navbar-default {
     border:0px solid black;
