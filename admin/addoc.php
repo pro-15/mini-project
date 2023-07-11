@@ -4,7 +4,7 @@ include("header.html");
 
 
 $file = new FileUpload();
-$elements = array("nam" => "", "ag" => "", "ph" => "");
+$elements = array("dname" => "", "dage" => "", "dphon" => "");
 
 
 $form = new FormAssist($elements,$_POST);
@@ -13,13 +13,13 @@ $form = new FormAssist($elements,$_POST);
 $dao = new DataAccess();
 
 
-$labels = array('nam' => "Name", 'ag' => "Age", "ph" => "Phone");
+$labels = array('dname' => "Name", 'dage' => "Age", "dphon" => "Phone");
 
 
 $rules=array(
-    "nam" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaonly" => true),
-    "ag" => array("required" => true, "minlength" => 2, "maxlength" => 2, "integeronly" => true),
-    "ph" => array("required" => true, "minlength" => 10, "maxlength" => 10, "integeronly" => true)
+    "dname" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaonly" => true),
+    "dage" => array("required" => true, "minlength" => 2, "maxlength" => 2, "integeronly" => true),
+    "dphon" => array("required" => true, "minlength" => 10, "maxlength" => 10, "integeronly" => true)
 );
 
 
@@ -29,13 +29,13 @@ $validator = new FormValidator($rules,$labels);
 if(isset($_POST["insert"])) {
     if($validator->validate($_POST)) {
         $data=array(
-            'nam'=>$_POST['nam'],
-            'ag'=>$_POST['ag'],
-            'ph' => $_POST['ph']
+            'dname'=>$_POST['dname'],
+            'dage'=>$_POST['dage'],
+            'dphon' => $_POST['dphon']
         );
 
         print_r($data);
-        if($dao->insert($data,"emp")) {
+        if($dao->insert($data,"doc")) {
             echo "<script> alert('New record created successfully');</script> ";
         }
     }
@@ -47,13 +47,16 @@ if(isset($_POST["insert"])) {
 <head>
 </head>
 <body>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <div class="col-12 grid-margin stretch-card" >
+    <div class="card">
+        <div class="card-body">
+    <form action="" method="POST" class="forms-sample" enctype="multipart/form-data">
         <div class="form-group row">
             <div class="col-md-6">
                 Name:
 
-                <?= $form->textBox('nam',array('class'=>'form-control')); ?>
-                <?= $validator->error('nam'); ?>
+                <?= $form->textBox('dname',array('class'=>'form-control')); ?>
+                <?= $validator->error('dname'); ?>
 
             </div>
         </div>
@@ -61,8 +64,8 @@ if(isset($_POST["insert"])) {
             <div class="col-md-6">
                 Age:
 
-                <?= $form->textBox('ag',array('class'=>'form-control')); ?>
-                <?= $validator->error('ag'); ?>
+                <?= $form->textBox('dage',array('class'=>'form-control')); ?>
+                <?= $validator->error('dage'); ?>
 
             </div>
         </div>
@@ -70,13 +73,15 @@ if(isset($_POST["insert"])) {
             <div class="col-md-6">
                 Phone:
 
-                <?= $form->textBox('ph',array('class'=>'form-control')); ?>
-                <?= $validator->error('ph'); ?>
+                <?= $form->textBox('dphon',array('class'=>'form-control')); ?>
+                <?= $validator->error('dphon'); ?>
 
             </div>
         </div>
 
         <button type="submit" class="btn btn-gradient-primary mr-2" name="insert">Submit</button>
     </form>
+</div>
+</div>
 </body>
 </html>
