@@ -8,35 +8,40 @@ $dao=new DataAccess();
 
 
 ?>
-<?php include('oghead.php'); ?>
+<?php include('header.html'); ?>
 
-    
-    <div class="container_gray_bg" id="home_feat_1">
-    <div class="container">
-    	<div class="row">
-            <div class="col-md-12">
-                <table border="1" class="table" style="margin-top:100px;">
-                    <tr>
-
+<div class="row">
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Doctors List</h4>
+            <p class="card-description">
+                List of all doctors
+            </p>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
                         <th>Id</th>
                         <th>Name</th>
                         <th>Age</th>
                         <th>Phone</th>
                         <th>Edit</th>
 
-                    </tr>
+                </tr>
+                </thead>
+                <tbody>
 <?php
     
     $actions=array(
-    'edit'=>array('label'=>'Edit','link'=>'editspecilization.php','params'=>array('id'=>'id'),'attributes'=>array('class'=>'btn btn-success')),
+    'edit'=>array('label'=>'Edit','link'=>'editspecilization.php','params'=>array('id'=>'did'),'attributes'=>array('class'=>'btn btn-inverse-warning btn-sm')),
     
-    'delete'=>array('label'=>'Delete','link'=>'editspecilization.php','params'=>array('id'=>'id'),'attributes'=>array('class'=>'btn btn-success'))
+    'delete'=>array('label'=>'Delete','link'=>'editspecilization.php','params'=>array('id'=>'did'),'attributes'=>array('class'=>'btn btn-inverse-danger btn-sm'))
     
     );
 
     $config=array(
         'srno'=>true,
-        'hiddenfields'=>array('id'),
+        'hiddenfields'=>array('did'),
         
         
     );
@@ -45,26 +50,20 @@ $dao=new DataAccess();
    $join=array(
         
     );
-     $fields=array('id', 'nam', 'ag', 'ph');
+     $fields=array('did', 'dname', 'dage', 'dphon');
 
-    $users=$dao->selectAsTable($fields,'emp',1,$join,$actions,$config);
+    $users=$dao->selectAsTable($fields,'doc',1,$join,$actions,$config);
     
     echo $users;
                     
 
 ?>
-             
-                </table>
-            </div>    
-
-            
-            
-            
-            
-        </div><!-- End row -->
-    </div><!-- End container -->
-    </div><!-- End container_gray_bg -->
-    
-    
-</body>
-</html>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+<?php
+    include("footer.html");
+?>

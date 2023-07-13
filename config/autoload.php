@@ -4,7 +4,7 @@
 //your project path goes here
 define("BASE_URL","http://localhost/mini-project/");
 
-if(file_exists("../../htdocs")) {
+if(is_dir("../../../htdocs")) {
     define("BASE_PATH","c:xampp/htdocs/mini-project/");
 }
 else {
