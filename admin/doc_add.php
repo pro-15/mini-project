@@ -33,8 +33,7 @@ if (isset($_POST["insert"])) {
             'dage' => $_POST['dage'],
             'dphon' => $_POST['dphon']
         );
-
-        print_r($data);
+        
         if ($dao->insert($data, "doc")) {
             echo "<script> alert('New record created successfully');</script> ";
         }
