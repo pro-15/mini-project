@@ -1,20 +1,18 @@
 <?php
-
 require('../config/autoload.php');
 include("header.html");
 
+
+$dao = new DataAccess();
+$info=$dao->getData('*','dept','id='.$_GET['id']);
 $file = new FileUpload();
 $elements = array(
-    "dept" => "",
-    "dmg" => ""
+    "dept" => $info[0]['dept'],
+    "dmg" => "",
 );
-
 
 $form = new FormAssist($elements, $_POST);
 
-
-
-$dao = new DataAccess();
 
 $labels = array('dept' => "Department name", 'dmg' => "Department image");
 
@@ -27,33 +25,25 @@ $rules = array(
 
 $validator = new FormValidator($rules, $labels);
 
-if (isset($_POST["insert"])) {
-
+if (isset($_POST["update"])) {
     if ($validator->validate($_POST)) {
-
         if ($fileName = $file->doUploadRandom($_FILES['dmg'], array('.jpg', '.png', '.jpeg'), 100000, 1, '../uploads')) {
-
+            $flag=true;
+        }
             $data = array(
-
-
                 'dept' => $_POST['dept'],
-                'dmg' => $fileName
-
-
+                'dmg' => ''
             );
-
-            
-            if ($dao->insert($data, "dept")) {
-                echo "<script> alert('New record created successfully');</script> ";
+            $condition = "id=".$_GET['id'];
+            if(isset($flag)){
+                $data['dmg'] = $fileName;
+            }
+            if ($dao->update($data, "dept", $condition)) {
+                $msg = "Updated successfully";
             } else {
-                $msg = "Registration failed";
-            } ?>
-
-
-<?php
-
-        } else
-            echo $file->errors();
+                $msg = "Updation failed";
+            } 
+            echo "<script> alert('$msg'); </script>";
     }
 }
 
@@ -89,7 +79,7 @@ if (isset($_POST["insert"])) {
                             <?= $validator->error('dmg'); ?>
                         </span>
                     </div>
-                    <button type="submit" class="btn btn-gradient-primary mr-2" name="insert">Submit</button>
+                    <button type="submit" class="btn btn-gradient-primary mr-2" name="update">Update</button>
                 </form>
             </div>
         </div>
