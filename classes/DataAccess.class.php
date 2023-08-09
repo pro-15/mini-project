@@ -629,7 +629,31 @@ class DataAccess
                         {
                             $str.=$attr."='".$attrval."' ";
                         }
-                        $str.=" >".$act['label']."</a>&nbsp;&nbsp;&nbsp;";
+                        $str.="> ";
+
+
+
+
+
+						//Not part of original code
+						//Not part of original code
+						//Not part of original code
+						switch($ind) {
+							case "delete" ; $str.="<i class='mdi mdi-delete'></i> ";
+								break;
+							case "edit" : $str.="<i class='mdi mdi-lead-pencil'></i> ";
+								break;
+						}
+						//Not part of original code
+						//Not part of original code
+						//Not part of original code
+
+
+
+						
+
+
+						$str.=$act['label']."</a>&nbsp;&nbsp;&nbsp;";
                     
                     if(isset($config['actions_td']) && $config['actions_td']==true)
                        $str.="</td>";   

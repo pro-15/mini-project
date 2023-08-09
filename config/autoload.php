@@ -3,10 +3,14 @@
 
 //your project path goes here
 define("BASE_URL","http://localhost/mini-project/");
-
-
 //define("BASE_PATH","c:xampp/htdocs/mini-project/");
-define("BASE_PATH","c:wamp64/www/mini-project/");
+//define("BASE_PATH","c:wamp64/www/mini-project/");
+
+
+if(file_exists("../../xmp.txt")) $path="c:xampp/htdocs/mini-project/";
+else $path="c:wamp64/www/mini-project/";
+define("BASE_PATH", $path);
+
 
 
 //set your timezone here

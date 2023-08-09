@@ -22,10 +22,10 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th style="width:2em; word-wrap: break-word;">Id</th>
                                 <th>Department</th>
                                 <th>Image</th>
-                                <th>Edit</th>
+                                <th style="width:4em; word-wrap: break-word;">Edit</th>
 
                             </tr>
                         </thead>
@@ -42,7 +42,7 @@
                             $config = array(
                                 'srno' => true,
                                 'hiddenfields' => array('id'),
-                                'images' => array(array('field' => 'dmg', 'path' => '../uploads/', 'attributes' => array())),
+                                'images' => array(array('field' => 'dmg', 'path' => '../uploads/', 'attributes' => array("style"=>"height:100px;width:auto;"))),
 
                             );
 
