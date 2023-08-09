@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 07, 2023 at 05:39 AM
+-- Generation Time: Aug 09, 2023 at 05:42 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -29,18 +29,19 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `dept`;
 CREATE TABLE IF NOT EXISTS `dept` (
-  `did` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `dept` varchar(30) NOT NULL,
   `dmg` varchar(100) NOT NULL,
-  PRIMARY KEY (`did`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `dept`
 --
 
-INSERT INTO `dept` (`did`, `dept`, `dmg`) VALUES
-(1, 'Orthopedics', '338898d332bdcd5fc58ed25b67fb13fa_c4289d03005.png');
+INSERT INTO `dept` (`id`, `dept`, `dmg`) VALUES
+(1, 'Otolaryngologist', '0d20e6111416a2dd7f6191d8d0cf6157_f00cd392d567ab9.png'),
+(2, 'Orthopedics', '21ff2d49071bf0081eb930805077061a_af744b3ff48ea4f.png');
 
 -- --------------------------------------------------------
 
