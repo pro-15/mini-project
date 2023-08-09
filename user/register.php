@@ -30,28 +30,26 @@
 	require('../config/autoload.php');
 	$dao = new DataAccess();
 	$elements = array(
-		"fname" => "",
-		"lname" => "",
+		"name" => "",
 		"email" => "",
-		"phone" => "",
-		"password" => "",
-		"cpassword" => ""
+		"mobile" => "",
+		"pass" => "",
+		"cpass" => ""
 	);
 
 
 	$form = new FormAssist($elements, $_POST);
 	//$file=new FileUpload();
-	$labels = array('fname' => "First Name", "lname" => "Last Name", "email" => "Email Id", "phone" => "Phone Number", "password" => "Password", "cpassword" => "Confirm Password");
+	$labels = array('name' => "Name", "email" => "Email Id", "mobile" => "Mobile Number", "pass" => "Password", "cpass" => "Confirm pass");
 
 	$rules = array(
-		"fname" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaspaceonly" => true),
-		"lname" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaonly" => true),
+		"name" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaspaceonly" => true),
 		"email" => array("required" => true, "email" => true, "unique" => array("field" => "uemail", "table" => "users")),
 
-		"phone" => array("required" => true, "integeronly" => true, "minlength" => 10, "maxlength" => 10),
+		"mobile" => array("required" => true, "integeronly" => true, "minlength" => 10, "maxlength" => 10),
 
-		"password" => array("required" => true),
-		"cpassword" => array("required" => true, "compare" => array("comparewith" => "password", "operator" => "=")),
+		"pass" => array("required" => true),
+		"cpass" => array("required" => true, "compare" => array("comparewith" => "pass", "operator" => "=")),
 	);
 
 
@@ -62,11 +60,10 @@
 			// code for insertion 
 	
 			$data = array(
-				'fname' => $_POST['fname'],
-				'lname' => $_POST['lname'],
-				'phone' => $_POST['phone'],
+				'name' => $_POST['name'],
+				'mobile' => $_POST['mobile'],
 				'uemail' => $_POST['email'],
-				'upassword' => $_POST['password'],
+				'upass' => $_POST['pass'],
 				'status' => 1
 			);
 			if ($dao->insert($data, 'users46')) {
@@ -104,50 +101,75 @@
 							<h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
 							<form class="pt-3" action="">
 								<div class="form-group">
+
+									<!-- Name -->
+
 									<?= $form->textBox('name', array("class" => "form-control form-control-lg", "id" => "exampleInputName1", "placeholder" => "Name")); ?>
 									<span class="valErr">
-										<?= $validator->error('fname'); ?>
+										<?= $validator->error('name'); ?>
 									</span>
 
-									<!-- <input type="text" class="form-control form-control-lg" id="exampleInputUsername1"
-										placeholder="Username"> -->
+
 								</div>
 								<div class="form-group">
-									<?= $form->textBox('email', array("placeholder" => "Email")); ?>
+
+									<!-- Email -->
+
+									<?= $form->textBox('email', array("class" => "form-control form-control-lg", "id" => "exampleInputEmail1", "placeholder" => "Email")); ?>
 									<span class="valErr">
 										<?= $validator->error('email'); ?>
 									</span>
 
-									<input type="email" class="form-control form-control-lg" id="exampleInputEmail1"
-										placeholder="Email">
+
 								</div>
 								<div class="form-group">
-									<select class="form-control form-control-lg" id="exampleFormControlSelect2">
-										<option>Country</option>
-										<option>United States of America</option>
-										<option>United Kingdom</option>
-										<option>India</option>
-										<option>Germany</option>
-										<option>Argentina</option>
-									</select>
+
+									<!-- Mobile -->
+
+									<?= $form->textBox('mobile', array("class" => "form-control", "id" => "exampleInputMobile", "placeholder" => "Mobile Number")); ?>
+									<span class="valErr">
+										<?= $validator->error('mobile'); ?>
+									</span>
+
+
 								</div>
 								<div class="form-group">
-									<input type="password" class="form-control form-control-lg" id="exampleInputPassword1"
-										placeholder="Password">
+
+								<!-- Password -->
+
+									<?= $form->passwordbox('pass', array("class"=>"form-control", "id"=>"exampleInputPassword1","placeholder" => "Password")); ?>
+									<span class="valErr">
+										<?= $validator->error('pass'); ?>
+									</span>
+
+								
+								</div>
+								<div class="form-group">
+
+								<!-- Confirm Password -->
+
+									<?= $form->passwordbox('cpass', array("class"=>"form-control", "id"=>"exampleInputConfirmPassword1","placeholder" => "Confirm Password")); ?>
+									<span class="valErr">
+										<?= $validator->error('cpass'); ?>
+									</span>
+		
+								
 								</div>
 								<div class="mb-4">
 									<div class="form-check">
 										<label class="form-check-label text-muted">
-											<input type="checkbox" class="form-check-input"> I agree to all Terms & Conditions
+											<input type="checkbox" class="form-check-input"> I agree to all Terms &
+											Conditions
 										</label>
 									</div>
 								</div>
 								<div class="mt-3">
-									<a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN
+									<a
+										class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN
 										UP</a>
 								</div>
-								<div class="text-center mt-4 font-weight-light"> Already have an account? <a href="login.html"
-										class="text-primary">Login</a>
+								<div class="text-center mt-4 font-weight-light"> Already have an account? <a
+										href="login.html" class="text-primary">Login</a>
 								</div>
 							</form>
 						</div>
