@@ -30,7 +30,8 @@
 	require('../config/autoload.php');
 	$dao = new DataAccess();
 	$elements = array(
-		"name" => "",
+		"fname" => "",
+		"lname" => "",
 		"email" => "",
 		"mobile" => "",
 		"pass" => "",
@@ -40,10 +41,11 @@
 
 	$form = new FormAssist($elements, $_POST);
 	//$file=new FileUpload();
-	$labels = array('name' => "Name", "email" => "Email Id", "mobile" => "Mobile Number", "pass" => "Password", "cpass" => "Confirm pass");
+	$labels = array('fname' => "First Name", 'lname' => "Last Name", "email" => "Email Id", "mobile" => "Mobile Number", "pass" => "Password", "cpass" => "Confirm Password");
 
 	$rules = array(
-		"name" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaspaceonly" => true),
+		"fname" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaspaceonly" => true),
+		"lname" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaspaceonly" => true),
 		"email" => array("required" => true, "email" => true, "unique" => array("field" => "uemail", "table" => "users")),
 
 		"mobile" => array("required" => true, "integeronly" => true, "minlength" => 10, "maxlength" => 10),
@@ -58,28 +60,24 @@
 	if (isset($_POST['register'])) {
 		if ($validator->validate($_POST)) {
 			// code for insertion 
-	
+
 			$data = array(
-				'name' => $_POST['name'],
+				'fname' => $_POST['fname'],
+				'lname' => $_POST['lname'],
 				'mobile' => $_POST['mobile'],
 				'uemail' => $_POST['email'],
 				'upass' => $_POST['pass'],
 				'status' => 1
 			);
-			if ($dao->insert($data, 'users46')) {
+			if ($dao->insert($data, 'userdat')) {
 				$msg = "Inserted Successfully";
 			} else
 				$msg = "insertion failed";
 		}
-
-
-
-
 	}
 
 	if (isset($_POST['home'])) {
 		echo "<script> location.replace('displaycategory.php'); </script>";
-
 	}
 
 	?>
@@ -102,11 +100,22 @@
 							<form class="pt-3" action="">
 								<div class="form-group">
 
-									<!-- Name -->
+									<!-- First Name -->
 
-									<?= $form->textBox('name', array("class" => "form-control form-control-lg", "id" => "exampleInputName1", "placeholder" => "Name")); ?>
+									<?= $form->textBox('fname', array("class" => "form-control form-control-lg", "placeholder" => "First Name")); ?>
 									<span class="valErr">
-										<?= $validator->error('name'); ?>
+										<?= $validator->error('fname'); ?>
+									</span>
+
+
+								</div>
+								<div class="form-group">
+
+									<!-- Last Name -->
+
+									<?= $form->textBox('lname', array("class" => "form-control form-control-lg", "placeholder" => "Last Name")); ?>
+									<span class="valErr">
+										<?= $validator->error('lname'); ?>
 									</span>
 
 
@@ -135,25 +144,37 @@
 								</div>
 								<div class="form-group">
 
-								<!-- Password -->
+									<!-- Password -->
 
-									<?= $form->passwordbox('pass', array("class"=>"form-control", "id"=>"exampleInputPassword1","placeholder" => "Password")); ?>
+									<?= $form->passwordbox('pass', array("class" => "form-control", "id" => "exampleInputPassword1", "placeholder" => "Password")); ?>
 									<span class="valErr">
 										<?= $validator->error('pass'); ?>
 									</span>
 
-								
+
 								</div>
 								<div class="form-group">
 
-								<!-- Confirm Password -->
+									<!-- Confirm Password -->
 
-									<?= $form->passwordbox('cpass', array("class"=>"form-control", "id"=>"exampleInputConfirmPassword1","placeholder" => "Confirm Password")); ?>
+									<?= $form->passwordbox('cpass', array("class" => "form-control", "id" => "exampleInputConfirmPassword1", "placeholder" => "Confirm Password")); ?>
 									<span class="valErr">
 										<?= $validator->error('cpass'); ?>
 									</span>
-		
-								
+
+
+								</div>
+								<div class="form-group">
+
+									<!-- Date of birth -->
+									<!-- <div class="input-group date" data-provide="datepicker">
+										<input type="text" class="form-control">
+										<div class="input-group-addon">
+											<span class="glyphicon glyphicon-th"></span>
+										</div>
+									</div> -->
+									<input data-provide="daterangepicker">
+
 								</div>
 								<div class="mb-4">
 									<div class="form-check">
@@ -164,12 +185,10 @@
 									</div>
 								</div>
 								<div class="mt-3">
-									<a
-										class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN
+									<a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN
 										UP</a>
 								</div>
-								<div class="text-center mt-4 font-weight-light"> Already have an account? <a
-										href="login.html" class="text-primary">Login</a>
+								<div class="text-center mt-4 font-weight-light"> Already have an account? <a href="login.html" class="text-primary">Login</a>
 								</div>
 							</form>
 						</div>
