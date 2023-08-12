@@ -18,6 +18,10 @@
 	<link rel="stylesheet" href="../admin/assets/css/style.css">
 	<!-- End layout styles -->
 	<link rel="shortcut icon" href="../admin/assets/images/favicon.ico" />
+
+	<!-- Date picker -->
+	<link rel="stylesheet" href="reg/vendor/datepicker/daterangepicker.css">
+
 </head>
 
 <body>
@@ -167,13 +171,13 @@
 								<div class="form-group">
 
 									<!-- Date of birth -->
-									<!-- <div class="input-group date" data-provide="datepicker">
-										<input type="text" class="form-control">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-th"></span>
-										</div>
-									</div> -->
-									<input data-provide="daterangepicker">
+
+
+									<input class="form-control js-datepicker" type="text" placeholder="Date of Birth" name="birthday">
+									<!-- <i class="mdi mdi-calendar input-icon js-btn-calendar"></i> -->
+
+
+
 
 								</div>
 								<div class="mb-4">
