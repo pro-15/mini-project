@@ -7,17 +7,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Purple Admin</title>
 	<!-- plugins:css -->
-	<link rel="stylesheet" href="../admin/assets/vendors/mdi/css/materialdesignicons.min.css">
-	<link rel="stylesheet" href="../admin/assets/vendors/css/vendor.bundle.base.css">
+	<link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
 	<!-- endinject -->
 	<!-- Plugin css for this page -->
 	<!-- End plugin css for this page -->
 	<!-- inject:css -->
 	<!-- endinject -->
 	<!-- Layout styles -->
-	<link rel="stylesheet" href="../admin/assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<!-- End layout styles -->
-	<link rel="shortcut icon" href="../admin/assets/images/favicon.ico" />
+	<link rel="shortcut icon" href="assets/images/favicon.ico" />
 
 	<!-- Date picker -->
 	<link rel="stylesheet" href="reg/vendor/datepicker/daterangepicker.css">
@@ -97,7 +97,7 @@
 					<div class="col-lg-4 mx-auto">
 						<div class="auth-form-light text-left p-5">
 							<div class="brand-logo">
-								<img src="../admin/assets/images/logo.svg">
+								<img src="assets/images/logo.svg">
 							</div>
 							<h4>New here?</h4>
 							<h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
@@ -220,14 +220,14 @@
 
 	<!-- container-scroller -->
 	<!-- plugins:js -->
-	<script src="../admin/assets/vendors/js/vendor.bundle.base.js"></script>
+	<script src="assets/vendors/js/vendor.bundle.base.js"></script>
 	<!-- endinject -->
 	<!-- Plugin js for this page -->
 	<!-- End plugin js for this page -->
 	<!-- inject:js -->
-	<script src="../admin/assets/js/off-canvas.js"></script>
-	<script src="../admin/assets/js/hoverable-collapse.js"></script>
-	<script src="../admin/assets/js/misc.js"></script>
+	<script src="assets/js/off-canvas.js"></script>
+	<script src="assets/js/hoverable-collapse.js"></script>
+	<script src="assets/js/misc.js"></script>
 	<!-- endinject -->
 </body>
 
