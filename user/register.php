@@ -168,23 +168,22 @@
 
 
 								</div>
-								<div class="form-group">
+								<!-- <div class="form-group">
 
-									<!-- Date of birth -->
+									<_!-- Date of birth --_>
 
 
 									<input class="form-control js-datepicker" type="text" placeholder="Date of Birth" name="birthday">
-									<!-- <i class="mdi mdi-calendar input-icon js-btn-calendar"></i> -->
+									<_!-- <i class="mdi mdi-calendar input-icon js-btn-calendar"></i> --_>
 
 
-
-
-								</div>
+								</div> -->
 								<div class="mb-4">
 									<div class="form-check">
 										<label class="form-check-label text-muted">
-											<input type="checkbox" class="form-check-input"> I agree to all Terms &
-											Conditions
+											<input type="checkbox" class="form-check-input">
+											I agree to all
+											<a href="tnc.html" class="text-primary">Terms & Conditions</a>
 										</label>
 									</div>
 								</div>
