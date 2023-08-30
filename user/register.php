@@ -182,8 +182,7 @@
 									<div class="form-check">
 										<label class="form-check-label text-muted">
 											<input type="checkbox" class="form-check-input">
-											I agree to all
-											<a href="tnc.html" class="text-primary">Terms & Conditions</a>
+											I agree to all Terms & Conditions
 										</label>
 									</div>
 								</div>
@@ -191,7 +190,7 @@
 									<a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN
 										UP</a>
 								</div>
-								<div class="text-center mt-4 font-weight-light"> Already have an account? <a href="login.html" class="text-primary">Login</a>
+								<div class="text-center mt-4 font-weight-light"> Already have an account? <a href="login.php" class="text-primary">Login</a>
 								</div>
 							</form>
 						</div>
