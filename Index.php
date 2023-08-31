@@ -5,17 +5,17 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>OPM Clinic</title>
+	<title>Purple Site</title>
 	<!-- plugins:css -->
-	<link rel="stylesheet" href="admin/assets/vendors/mdi/css/materialdesignicons.min.css">
-	<link rel="stylesheet" href="admin/assets/vendors/css/vendor.bundle.base.css">
+	<link rel="stylesheet" href="user/assets/vendors/mdi/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="user/assets/vendors/css/vendor.bundle.base.css">
 	<!-- endinject -->
 	<!-- Plugin css for this page -->
 	<!-- End plugin css for this page -->
 	<!-- inject:css -->
 	<!-- endinject -->
 	<!-- Layout styles -->
-	<link rel="stylesheet" href="admin/assets/css/style.css">
+	<link rel="stylesheet" href="user/assets/css/style.css">
 	<!-- End layout styles -->
 	<link rel="shortcut icon" href="assets/images/favicon.ico" />
 </head>
@@ -24,7 +24,7 @@
 	<div class="container-scroller">
 		<nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
 			<div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-				<a class="navbar-brand brand-logo" href="index.html"><img src="admin/assets/images/logo.svg" alt="logo" /></a>
+				<a class="navbar-brand brand-logo" href="index.html"><img src="user/assets/images/logo.svg" alt="logo" /></a>
 			</div>
 			<div class="navbar-menu-wrapper d-flex align-items-stretch">
 				<ul class="navbar-nav navbar-nav-right">
@@ -43,7 +43,7 @@
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item preview-item">
 								<div class="preview-thumbnail">
-									<img src="admin/assets/images/faces/face4.jpg" alt="image" class="profile-pic">
+									<img src="user/assets/images/faces/face4.jpg" alt="image" class="profile-pic">
 								</div>
 								<div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
 									<h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
@@ -53,7 +53,7 @@
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item preview-item">
 								<div class="preview-thumbnail">
-									<img src="admin/assets/images/faces/face2.jpg" alt="image" class="profile-pic">
+									<img src="user/assets/images/faces/face2.jpg" alt="image" class="profile-pic">
 								</div>
 								<div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
 									<h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
@@ -63,7 +63,7 @@
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item preview-item">
 								<div class="preview-thumbnail">
-									<img src="admin/assets/images/faces/face3.jpg" alt="image" class="profile-pic">
+									<img src="user/assets/images/faces/face3.jpg" alt="image" class="profile-pic">
 								</div>
 								<div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
 									<h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
@@ -113,8 +113,8 @@
 									</div>
 								</div>
 								<div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-									<h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
-									<p class="text-gray ellipsis mb-0"> New admin wow! </p>
+									<h6 class="preview-subject font-weight-normal mb-1">Launch user</h6>
+									<p class="text-gray ellipsis mb-0"> New user wow! </p>
 								</div>
 							</a>
 							<div class="dropdown-divider"></div>
