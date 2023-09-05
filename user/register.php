@@ -42,7 +42,6 @@
 		"cpass" => ""
 	);
 
-
 	$form = new FormAssist($elements, $_POST);
 	//$file=new FileUpload();
 	$labels = array('fname' => "First Name", 'lname' => "Last Name", "email" => "Email Id", "mobile" => "Mobile Number", "pass" => "Password", "cpass" => "Confirm Password");
@@ -50,14 +49,11 @@
 	$rules = array(
 		"fname" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaspaceonly" => true),
 		"lname" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaspaceonly" => true),
-		"email" => array("required" => true, "email" => true, "unique" => array("field" => "uemail", "table" => "users")),
-
+		"email" => array("required" => true, "email" => true),
 		"mobile" => array("required" => true, "integeronly" => true, "minlength" => 10, "maxlength" => 10),
-
 		"pass" => array("required" => true),
 		"cpass" => array("required" => true, "compare" => array("comparewith" => "pass", "operator" => "=")),
 	);
-
 
 	$validator = new FormValidator($rules, $labels);
 
@@ -71,12 +67,12 @@
 				'mobile' => $_POST['mobile'],
 				'uemail' => $_POST['email'],
 				'upass' => $_POST['pass'],
-				'status' => 1
 			);
-			if ($dao->insert($data, 'userdat')) {
+			if ($dao->insert($data, 'userdat'))
 				$msg = "Inserted Successfully";
-			} else
-				$msg = "insertion failed";
+			else
+				$msg = "Insertion failed";
+			echo "<script> alert('$msg'); </script>";
 		}
 	}
 
@@ -101,7 +97,7 @@
 							</div>
 							<h4>New here?</h4>
 							<h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-							<form class="pt-3" action="">
+							<form class="pt-3" action="" method="POST">
 								<div class="form-group">
 
 									<!-- First Name -->
@@ -187,8 +183,9 @@
 									</div>
 								</div>
 								<div class="mt-3">
-									<a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN
-										UP</a>
+									<!-- <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn"> -->
+										<button class="btn btn-block btn-gradient-primary btn-lg font-weight-medium" name="register" type="submit">SIGN UP</button>
+									<!-- </a> -->
 								</div>
 								<div class="text-center mt-4 font-weight-light"> Already have an account? <a href="login.php" class="text-primary">Login</a>
 								</div>
