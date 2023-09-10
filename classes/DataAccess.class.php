@@ -653,7 +653,7 @@ class DataAccess
 						
 
 
-						$str.=$act['label']."</a>&nbsp;&nbsp;&nbsp;";
+						$str.="</a>&nbsp;&nbsp;&nbsp;";
                     
                     if(isset($config['actions_td']) && $config['actions_td']==true)
                        $str.="</td>";   
