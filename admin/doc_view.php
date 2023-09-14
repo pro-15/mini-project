@@ -1,7 +1,4 @@
-<html>
-
-<body>
-    <?php
+<?php
     require('../config/autoload.php');
     include('header.html');
 
