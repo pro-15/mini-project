@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<title>Event Calendar with PHP</title>
+<meta property="og:url" content="https://codeshack.io/event-calendar-php/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Event Calendar with PHP">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://codeshack.io/web/img/posts/event-calendar-php.png">
+<meta property="og:description" content="Integrate the clean, robust, and innovative event calendar class with your projects seamlessly. Add events to the calendar and output the code in HTML format.">
+<meta property="og:site_name" content="CodeShack">
+<meta name="description" content="Integrate the clean, robust, and innovative event calendar class with your projects seamlessly. Add events to the calendar and output the code in HTML format.">
+<meta name="keywords" content="event calendar,php,php class,programming">
+<meta name="author" content="David Adams">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Integrate the clean, robust, and innovative event calendar class with your projects seamlessly. Add events to the calendar and output the code in HTML format.">
+<meta name="twitter:title" content="Event Calendar with PHP">
+<meta name="twitter:site" content="@codeshackio">
+<meta name="twitter:image" content="https://codeshack.io/web/img/posts/event-calendar-php.png">
+<meta name="twitter:creator" content="@codeshackio">
+<meta name="apple-mobile-web-app-title" content="CodeShack">
+<meta name="application-name" content="CodeShack">
+<link rel="icon" href="https://codeshack.io/web/img/icon.png">
+<link rel="apple-touch-icon" href="https://codeshack.io/web/img/icon-180x180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://codeshack.io/web/img/icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://codeshack.io/web/img/icon-180x180.png">
+<link rel="apple-touch-icon" sizes="167x167" href="https://codeshack.io/web/img/icon-167x167.png">
+<link href="https://codeshack.io/web/img/icon-192x192.png" rel="icon" sizes="192x192">
+<link href="https://codeshack.io/web/img/icon-128x128.png" rel="icon" sizes="128x128">
+<link href="https://codeshack.io/web/css/style.min.css?v=7.1.2" rel="stylesheet" type="text/css">
+<meta property="og:updated_time" content="2023-05-12T21:58:00+00:00">
+<meta property="article:published_time" content="2021-02-01T13:52:00+00:00">
+<meta property="article:modified_time" content="2023-05-12T21:58:00+00:00">
+<meta property="article:publisher" content="https://www.facebook.com/codeshackio/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://codeshack.io/event-calendar-php/"
+            },
+            "headline": "Event Calendar with PHP",
+            "description": "Integrate the clean, robust, and innovative event calendar class with your projects seamlessly. Add events to the calendar and output the code in HTML format.",
+            "image": "https://codeshack.io/web/img/posts/event-calendar-php.png",  
+            "author": {
+                "@type": "Person",
+                "name": "David Adams",
+                "url": "https://codeshack.io/author/david-adams/"
+            },  
+            "publisher": {
+                "@type": "Organization",
+                "name": "CodeShack",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://codeshack.io/web/img/codeshack.png"
+                }
+            },
+            "datePublished": "2021-02-01",
+            "dateModified": "2023-05-12"
+        }
+        </script>
+<link rel="canonical" href="https://codeshack.io/event-calendar-php/">
+<style>.main{padding-top:10px}</style>
+<link rel="dns-prefetch" href="//cdn.carbonads.com"><link rel="dns-prefetch" href="//www.googletagmanager.com"><link rel="dns-prefetch" href="//kit.fontawesome.com"><script data-pagespeed-no-defer>(function(){function f(a,b,d){if(a.addEventListener)a.addEventListener(b,d,!1);else if(a.attachEvent)a.attachEvent("on"+b,d);else{var c=a["on"+b];a["on"+b]=function(){d.call(this);c&&c.call(this)}}};window.pagespeed=window.pagespeed||{};var g=window.pagespeed;function k(a){this.g=[];this.f=0;this.h=!1;this.j=a;this.i=null;this.l=0;this.b=!1;this.a=0}function l(a,b){var d=b.getAttribute("data-pagespeed-lazy-position");if(d)return parseInt(d,0);var d=b.offsetTop,c=b.offsetParent;c&&(d+=l(a,c));d=Math.max(d,0);b.setAttribute("data-pagespeed-lazy-position",d);return d}
+function m(a,b){var d,c,e;if(!a.b&&(0==b.offsetHeight||0==b.offsetWidth))return!1;a:if(b.currentStyle)c=b.currentStyle.position;else{if(document.defaultView&&document.defaultView.getComputedStyle&&(c=document.defaultView.getComputedStyle(b,null))){c=c.getPropertyValue("position");break a}c=b.style&&b.style.position?b.style.position:""}if("relative"==c)return!0;e=0;"number"==typeof window.pageYOffset?e=window.pageYOffset:document.body&&document.body.scrollTop?e=document.body.scrollTop:document.documentElement&&
+document.documentElement.scrollTop&&(e=document.documentElement.scrollTop);d=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;c=e;e+=d;var h=b.getBoundingClientRect();h?(e=h.top-d,c=h.bottom):(h=l(a,b),d=h+b.offsetHeight,e=h-e,c=d-c);return e<=a.f&&0<=c+a.f}
+k.prototype.m=function(a){p(a);var b=this;window.setTimeout(function(){var d=a.getAttribute("data-pagespeed-lazy-src");if(d)if((b.h||m(b,a))&&-1!=a.src.indexOf(b.j)){var c=a.parentNode,e=a.nextSibling;c&&c.removeChild(a);a.c&&(a.getAttribute=a.c);a.removeAttribute("onload");a.tagName&&"IMG"==a.tagName&&g.CriticalImages&&f(a,"load",function(){g.CriticalImages.checkImageForCriticality(this);b.b&&(b.a--,b.a||g.CriticalImages.checkCriticalImages())});a.removeAttribute("data-pagespeed-lazy-src");a.removeAttribute("data-pagespeed-lazy-replaced-functions");
+c&&c.insertBefore(a,e);if(c=a.getAttribute("data-pagespeed-lazy-srcset"))a.srcset=c,a.removeAttribute("data-pagespeed-lazy-srcset");a.src=d}else b.g.push(a)},0)};k.prototype.loadIfVisibleAndMaybeBeacon=k.prototype.m;k.prototype.s=function(){this.h=!0;q(this)};k.prototype.loadAllImages=k.prototype.s;function q(a){var b=a.g,d=b.length;a.g=[];for(var c=0;c<d;++c)a.m(b[c])}function t(a,b){return a.a?null!=a.a(b):null!=a.getAttribute(b)}
+k.prototype.u=function(){for(var a=document.getElementsByTagName("img"),b=0,d;d=a[b];b++)t(d,"data-pagespeed-lazy-src")&&p(d)};k.prototype.overrideAttributeFunctions=k.prototype.u;function p(a){t(a,"data-pagespeed-lazy-replaced-functions")||(a.c=a.getAttribute,a.getAttribute=function(a){"src"==a.toLowerCase()&&t(this,"data-pagespeed-lazy-src")&&(a="data-pagespeed-lazy-src");return this.c(a)},a.setAttribute("data-pagespeed-lazy-replaced-functions","1"))}
+g.o=function(a,b){function d(){if(!(c.b&&a||c.i)){var b=200;200<(new Date).getTime()-c.l&&(b=0);c.i=window.setTimeout(function(){c.l=(new Date).getTime();q(c);c.i=null},b)}}var c=new k(b);g.lazyLoadImages=c;f(window,"load",function(){c.b=!0;c.h=a;c.f=200;if(g.CriticalImages){for(var b=0,d=document.getElementsByTagName("img"),r=0,n;n=d[r];r++)-1!=n.src.indexOf(c.j)&&t(n,"data-pagespeed-lazy-src")&&b++;c.a=b;c.a||g.CriticalImages.checkCriticalImages()}q(c)});b.indexOf("data")&&((new Image).src=b);f(window,
+"scroll",d);f(window,"resize",d)};g.lazyLoadInit=g.o;})();
+
+pagespeed.lazyLoadInit(true, "/pagespeed_static/1.JiBnMqyl6S.gif");
+</script></head>
+<body><noscript><meta HTTP-EQUIV="refresh" content="0;url='https://codeshack.io/event-calendar-php/?PageSpeed=noscript'" /><style><!--table,div,span,font,p{display:none} --></style><div style="display:block">Please click <a href="https://codeshack.io/event-calendar-php/?PageSpeed=noscript">here</a> if you are not redirected within a few seconds.</div></noscript>
+<div class="topnav">
+<div class="topnavcontent">
+<header class="logo">
+<a href="https://codeshack.io/"><img src="https://codeshack.io/web/img/logo.png" alt="CodeShack" width="135" height="32"></a>
+</header>
+<nav>
+<label for="drop" class="toggle mbars"><span class="bars"></span></label>
+<input type="checkbox" id="drop">
+<ul class="mhide">
+<li>
+<a href="https://codeshack.io/packages/">Packages</a>
+<div>
+<ul>
+<li><a href="https://codeshack.io/packages/php/">PHP</a></li>
+<li><a href="https://codeshack.io/php-scripts-bundle/">PHP Bundle</a></li>
+<li><a href="https://codeshack.io/packages/python/">Python</a></li>
+<li><a href="https://codeshack.io/packages/nodejs/">Node.js</a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="https://codeshack.io/tutorials/">Tutorials</a>
+<div>
+<ul>
+<li><a href="https://codeshack.io/tag/html/">HTML</a></li>
+<li><a href="https://codeshack.io/tag/css/">CSS</a></li>
+<li><a href="https://codeshack.io/tag/javascript/">JavaScript</a></li>
+<li><a href="https://codeshack.io/tag/php/">PHP</a></li>
+<li><a href="https://codeshack.io/tag/python/">Python</a></li>
+<li><a href="https://codeshack.io/tag/mysql/">MySQL</a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="https://codeshack.io/examples/">Examples</a>
+<div>
+<ul>
+<li><a href="https://codeshack.io/examples/html/">HTML</a></li>
+<li><a href="https://codeshack.io/examples/css/">CSS</a></li>
+<li><a href="https://codeshack.io/examples/javascript/">JavaScript</a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="https://codeshack.io/references/">References</a>
+<div>
+<ul>
+<li><a href="https://codeshack.io/references/html/">HTML</a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="https://codeshack.io/tools/">Tools</a>
+<div style="width:250px;">
+<ul>
+<li><a href="https://codeshack.io/code-editor/">Live Code Editor</a></li>
+<li><a href="https://codeshack.io/unix-timestamp-converter/">Unix Timestamp Converter</a></li>
+<li><a href="https://codeshack.io/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+<li><a href="https://codeshack.io/seo-title-meta-checker/">SEO Title & Meta Checker</a></li>
+<li><a href="https://codeshack.io/image-base64-converter/">Image to Base64 Converter</a></li>
+<li><a href="https://codeshack.io/what-is-my-ip/">What Is My IP</a></li>
+<li><a href="https://codeshack.io/password-generator/">Password Generator</a></li>
+<li><a href="https://codeshack.io/rgb-to-hex-converter/">RGB to HEX Converter</a></li>
+<li><a href="https://codeshack.io/hex-to-rgb-converter/">HEX to RGB Converter</a></li>
+</ul>
+</div>
+</li>
+<li class="dhide">
+<a href="https://codeshack.io/">CodeShack.io</a>
+<div>
+<ul>
+<li><a href="https://codeshack.io/about/">About Us</a></li>
+<li><a href="https://codeshack.io/contact/">Contact Us</a></li>
+<li><a href="https://codeshack.io/privacy-policy/">Privacy Policy</a></li>
+<li><a href="https://codeshack.io/terms/">Terms</a></li>
+<li><a href="https://codeshack.io/receiptresend/">Resend a Receipt</a></li>
+</ul>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="topcontent3 m100"></div>
+<div class="example-header">
+<div class="m100">
+<a href="https://codeshack.io/tag/html/">HTML</a>
+<a href="https://codeshack.io/tag/css/">CSS</a>
+<a href="https://codeshack.io/tag/javascript/">JavaScript</a>
+<a href="https://codeshack.io/tag/php/">PHP</a>
+<a href="https://codeshack.io/tag/python/">Python</a>
+<a href="https://codeshack.io/tag/mysql/">MySQL</a>
+</div>
+</div>
+<div class="main">
+<main class="m100">
+<div class="post mrm mpad">
+<article>
+<header>
+<h1>Event Calendar with PHP</h1>
+<p>
+Updated on <b><time datetime="2023-05-12T21:58:00+00:00">May 12, 2023</time></b> by <a href="https://codeshack.io/author/david-adams/">David Adams</a>
+</p>
+</header>
+<div>
+<img class="featuredimage" src="https://codeshack.io/web/img/posts/event-calendar-php.png" width="770" height="400" alt="Event Calendar with PHP">
+<div class="content m100 mpadtb">
+<p>In this article, I have developed an event calendar class that will populate all the days in a month based on the specified date, along with the events that we can add to the calendar.</p>
+<p>While PHP doesn't include a built-in calendar API per se (without including additional extensions), it does, however, give you a broad range of date and time methods that we can use to manipulate. In addition, we can use these methods to populate the pages showing the days, weeks, and months of a particular year.</p>
+<h2>Why should I use the calendar class?</h2>
+<p>It's entirely up to you and your requirements. I have decided to take it upon myself to write my own class as I work on many projects that require an event-based calendar system. I've searched countless times for a minimal, dependency-free, and modern library. But couldn't find one that I could seamlessly integrate with my projects. Therefore, I created a PHP class that can easily be integrated with any project, whether the project's size is small or large.</p>
+<h2>Source</h2>
+<p>Create a new file <i>Calendar.php</i> and add the following code:</p>
+<div class="code-header">
+<span>PHP</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-php">&lt;?php
+class Calendar {
+
+    private $active_year, $active_month, $active_day;
+    private $events = [];
+
+    public function __construct($date = null) {
+        $this-&gt;active_year = $date != null ? date(&#039;Y&#039;, strtotime($date)) : date(&#039;Y&#039;);
+        $this-&gt;active_month = $date != null ? date(&#039;m&#039;, strtotime($date)) : date(&#039;m&#039;);
+        $this-&gt;active_day = $date != null ? date(&#039;d&#039;, strtotime($date)) : date(&#039;d&#039;);
+    }
+
+    public function add_event($txt, $date, $days = 1, $color = &#039;&#039;) {
+        $color = $color ? &#039; &#039; . $color : $color;
+        $this-&gt;events[] = [$txt, $date, $days, $color];
+    }
+
+    public function __toString() {
+        $num_days = date(&#039;t&#039;, strtotime($this-&gt;active_day . &#039;-&#039; . $this-&gt;active_month . &#039;-&#039; . $this-&gt;active_year));
+        $num_days_last_month = date(&#039;j&#039;, strtotime(&#039;last day of previous month&#039;, strtotime($this-&gt;active_day . &#039;-&#039; . $this-&gt;active_month . &#039;-&#039; . $this-&gt;active_year)));
+        $days = [0 =&gt; &#039;Sun&#039;, 1 =&gt; &#039;Mon&#039;, 2 =&gt; &#039;Tue&#039;, 3 =&gt; &#039;Wed&#039;, 4 =&gt; &#039;Thu&#039;, 5 =&gt; &#039;Fri&#039;, 6 =&gt; &#039;Sat&#039;];
+        $first_day_of_week = array_search(date(&#039;D&#039;, strtotime($this-&gt;active_year . &#039;-&#039; . $this-&gt;active_month . &#039;-1&#039;)), $days);
+        $html = &#039;&lt;div class=&quot;calendar&quot;&gt;&#039;;
+        $html .= &#039;&lt;div class=&quot;header&quot;&gt;&#039;;
+        $html .= &#039;&lt;div class=&quot;month-year&quot;&gt;&#039;;
+        $html .= date(&#039;F Y&#039;, strtotime($this-&gt;active_year . &#039;-&#039; . $this-&gt;active_month . &#039;-&#039; . $this-&gt;active_day));
+        $html .= &#039;&lt;/div&gt;&#039;;
+        $html .= &#039;&lt;/div&gt;&#039;;
+        $html .= &#039;&lt;div class=&quot;days&quot;&gt;&#039;;
+        foreach ($days as $day) {
+            $html .= &#039;
+                &lt;div class=&quot;day_name&quot;&gt;
+                    &#039; . $day . &#039;
+                &lt;/div&gt;
+            &#039;;
+        }
+        for ($i = $first_day_of_week; $i &gt; 0; $i--) {
+            $html .= &#039;
+                &lt;div class=&quot;day_num ignore&quot;&gt;
+                    &#039; . ($num_days_last_month-$i+1) . &#039;
+                &lt;/div&gt;
+            &#039;;
+        }
+        for ($i = 1; $i &lt;= $num_days; $i++) {
+            $selected = &#039;&#039;;
+            if ($i == $this-&gt;active_day) {
+                $selected = &#039; selected&#039;;
+            }
+            $html .= &#039;&lt;div class=&quot;day_num&#039; . $selected . &#039;&quot;&gt;&#039;;
+            $html .= &#039;&lt;span&gt;&#039; . $i . &#039;&lt;/span&gt;&#039;;
+            foreach ($this-&gt;events as $event) {
+                for ($d = 0; $d &lt;= ($event[2]-1); $d++) {
+                    if (date(&#039;y-m-d&#039;, strtotime($this-&gt;active_year . &#039;-&#039; . $this-&gt;active_month . &#039;-&#039; . $i . &#039; -&#039; . $d . &#039; day&#039;)) == date(&#039;y-m-d&#039;, strtotime($event[1]))) {
+                        $html .= &#039;&lt;div class=&quot;event&#039; . $event[3] . &#039;&quot;&gt;&#039;;
+                        $html .= $event[0];
+                        $html .= &#039;&lt;/div&gt;&#039;;
+                    }
+                }
+            }
+            $html .= &#039;&lt;/div&gt;&#039;;
+        }
+        for ($i = 1; $i &lt;= (42-$num_days-max($first_day_of_week, 0)); $i++) {
+            $html .= &#039;
+                &lt;div class=&quot;day_num ignore&quot;&gt;
+                    &#039; . $i . &#039;
+                &lt;/div&gt;
+            &#039;;
+        }
+        $html .= &#039;&lt;/div&gt;&#039;;
+        $html .= &#039;&lt;/div&gt;&#039;;
+        return $html;
+    }
+
+}
+?&gt;</code></pre>
+<p>Add the following code to your stylesheet (CSS) or create a new file <i>calendar.css</i>:</p>
+<div class="code-header">
+<span>CSS</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-css">.calendar {
+    display: flex;
+    flex-flow: column;
+}
+.calendar .header .month-year {
+    font-size: 20px;
+    font-weight: bold;
+    color: #636e73;
+    padding: 20px 0;
+}
+.calendar .days {
+    display: flex;
+    flex-flow: wrap;
+}
+.calendar .days .day_name {
+    width: calc(100% / 7);
+    border-right: 1px solid #2c7aca;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    color: #818589;
+    color: #fff;
+    background-color: #448cd6;
+}
+.calendar .days .day_name:nth-child(7) {
+    border: none;
+}
+.calendar .days .day_num {
+    display: flex;
+    flex-flow: column;
+    width: calc(100% / 7);
+    border-right: 1px solid #e6e9ea;
+    border-bottom: 1px solid #e6e9ea;
+    padding: 15px;
+    font-weight: bold;
+    color: #7c878d;
+    cursor: pointer;
+    min-height: 100px;
+}
+.calendar .days .day_num span {
+    display: inline-flex;
+    width: 30px;
+    font-size: 14px;
+}
+.calendar .days .day_num .event {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background-color: #f7c30d;
+    color: #fff;
+    word-wrap: break-word;
+}
+.calendar .days .day_num .event.green {
+    background-color: #51ce57;
+}
+.calendar .days .day_num .event.blue {
+    background-color: #518fce;
+}
+.calendar .days .day_num .event.red {
+    background-color: #ce5151;
+}
+.calendar .days .day_num:nth-child(7n+1) {
+    border-left: 1px solid #e6e9ea;
+}
+.calendar .days .day_num:hover {
+    background-color: #fdfdfd;
+}
+.calendar .days .day_num.ignore {
+    background-color: #fdfdfd;
+    color: #ced2d4;
+    cursor: inherit;
+}
+.calendar .days .day_num.selected {
+    background-color: #f1f2f3;
+    cursor: inherit;
+}</code></pre>
+<h2>How To Use</h2>
+<p>Include the class in your project and create a new instance.</p>
+<div class="code-header">
+<span>PHP</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-php">include &#039;Calendar.php&#039;;
+$calendar = new Calendar();</code></pre>
+<p>We can specify a date while creating a new instance:</p>
+<div class="code-header">
+<span>PHP</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-php">include &#039;Calendar.php&#039;;
+$calendar = new Calendar(&#039;2023-05-12&#039;);</code></pre>
+<p>Add new events to the calendar:</p>
+<div class="code-header">
+<span>PHP</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-php">$calendar-&gt;add_event(&#039;Holiday&#039;, &#039;2023-05-14&#039;);</code></pre>
+<p>We can specify the number of days the event should last by binding an additional value to the <i class="hl">add_event</i> method:</p>
+<div class="code-header">
+<span>PHP</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-php">$calendar-&gt;add_event(&#039;Holiday&#039;, &#039;2023-05-14&#039;, 7); // Event will last for 7 days</code></pre>
+<p>We can also change the color:</p>
+<div class="code-header">
+<span>PHP</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-php">$calendar-&gt;add_event(&#039;Holiday&#039;, &#039;2023-05-14&#039;, 7, &#039;red&#039;);</code></pre>
+<p>Only red, blue, and green will work (the default is orange). You can add more colors to the CSS file.</p>
+<p>We can populate the calendar in HTML format with the following code:</p>
+<div class="code-header">
+<span>PHP</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-php">echo $calendar;</code></pre>
+<h2>Example Code</h2>
+<p>Create a new file <i>example.php</i> and add the following code:</p>
+<div class="code-header">
+<span>PHP</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-php">&lt;?php
+include &#039;Calendar.php&#039;;
+$calendar = new Calendar(&#039;2023-05-12&#039;);
+$calendar-&gt;add_event(&#039;Birthday&#039;, &#039;2023-05-03&#039;, 1, &#039;green&#039;);
+$calendar-&gt;add_event(&#039;Doctors&#039;, &#039;2023-05-04&#039;, 1, &#039;red&#039;);
+$calendar-&gt;add_event(&#039;Holiday&#039;, &#039;2023-05-16&#039;, 7);
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot;&gt;
+		&lt;title&gt;Event Calendar&lt;/title&gt;
+		&lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+		&lt;link href=&quot;calendar.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	    &lt;nav class=&quot;navtop&quot;&gt;
+	    	&lt;div&gt;
+	    		&lt;h1&gt;Event Calendar&lt;/h1&gt;
+	    	&lt;/div&gt;
+	    &lt;/nav&gt;
+		&lt;div class=&quot;content home&quot;&gt;
+			&lt;?=$calendar?&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>The stylesheet (style.css) for our example page:</p>
+<div class="code-header">
+<span>CSS</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-css">* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, &quot;segoe ui&quot;, roboto, oxygen, ubuntu, cantarell, &quot;fira sans&quot;, &quot;droid sans&quot;, &quot;helvetica neue&quot;, Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    background-color: #FFFFFF;
+    margin: 0;
+}
+.navtop {
+    background-color: #3b4656;
+    height: 60px;
+    width: 100%;
+    border: 0;
+}
+.navtop div {
+    display: flex;
+    margin: 0 auto;
+    width: 800px;
+    height: 100%;
+}
+.navtop div h1, .navtop div a {
+    display: inline-flex;
+    align-items: center;
+}
+.navtop div h1 {
+    flex: 1;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    color: #ebedee;
+    font-weight: normal;
+}
+.navtop div a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #c4c8cc;
+    font-weight: bold;
+}
+.navtop div a i {
+    padding: 2px 8px 0 0;
+}
+.navtop div a:hover {
+    color: #ebedee;
+}
+.content {
+    width: 800px;
+    margin: 0 auto;
+}
+.content h2 {
+    margin: 0;
+    padding: 25px 0;
+    font-size: 22px;
+    border-bottom: 1px solid #ebebeb;
+    color: #666666;
+}</code></pre>
+<p>And now, if we navigate to our example page, it will appear similar to the following:</p>
+<div class="browser">
+<div>
+<span class="btn red"></span>
+<span class="btn orange"></span>
+<span class="btn green"></span>
+<span class="url">http://localhost/phpcalendar/example.php</span>
+</div>
+<img data-pagespeed-lazy-src="https://codeshack.io/web/img/phpcalendar/event-calendar-php.png" width="780" height="546" alt="Event Calendar PHP" src="/pagespeed_static/1.JiBnMqyl6S.gif" onload="pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+</div>
+<p>If you don't see any events populated on the calendar, make sure the dates are correct, and your server timezone is set correctly. You can change the timezone with the below code.</p>
+<div class="code-header">
+<span>PHP</span>
+<a href="#"><i class="fas fa-clipboard fa-sm"></i>Copy</a>
+</div>
+<pre><code class="language-php">date_default_timezone_set(&#039;America/Los_Angeles&#039;);</code></pre>
+<p>The full list of supported timezones are available <a href="https://www.php.net/manual/en/timezones.php" target="_blank" class="l1">here</a>.</p>
+<h2>Conclusion</h2>
+<p>While the calendar class I've created is not a complete solution, it will most definitely help you integrate the class into any project seamlessly and extend the base code.</p>
+<p>Drop a comment below and let me know if you encounter any issues with the class. Don't forget to follow us on social media and share our articles, as this will help our website grow, and we can provide more quality content.</p>
+<p>Released under the MIT License. If you're going to redistribute the code, please include my name and link to this article. Thanks!</p> <p class="package-info">If you would like to support us, consider purchasing the advanced event calendar system below as it will greatly help us create more tutorials and keep our website up and running. The advanced package includes improved code and more features.</p>
+<div class="package-tables" id="packages">
+<div class="package-table m100">
+<div class="package-table-header">
+<h3>Advanced</h3>
+<div class="price"><span class="currency">&dollar;</span>25.00</div>
+<a href="https://codeshack.io/package/php/advanced-event-calendar-system/" target="_blank">view more details</a>
+</div>
+<div class="package-table-features">
+<div class="package-table-feature">Source Code<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Database SQL File<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Secure Event Calendar System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Add, Edit & Delete Events<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Mini Calendar Feature<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Event Description Feature<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Event Photo Feature<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Expandable Events<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Recurring Events<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">AJAX Indicator (circle loader) Feature<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">JavaScript Modals Feature<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">JavaScript Class<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">MySQL Integration<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">AJAX Integration<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">SCSS File<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Admin Panel<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Responsive Design<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Commented Code<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Free Updates & Support (minor issues)<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">User Guide<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Extra: no-Database version<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Extra: no-JS version<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Extra: Tutorial Source Code<i class="fas fa-check-circle"></i></div>
+</div>
+<div class="package-table-btns">
+<a href="https://codeshack.io/index.php?page=blog&action=payment&pid=82&type=bundle" rel="nofollow" class="paypal"><span>PayPal</span>Download</a>
+<a href="#" class="stripe stripe-btn" rel="nofollow" data-code="price_1N72O4K5KcJwNwwG4oz09bbr"><span>Stripe</span>Download</a>
+<a href="https://codeshack.io/buy-with-crypto/82/" rel="nofollow" class="alt"><span>Crypto</span>Download</a>
+</div>
+</div>
+<div class="package-table m100">
+<div class="package-table-header">
+<div class="sale">Sale</div>
+<h3>Bundle (Save 59%)</h3>
+<div class="alt price"><span class="currency">&dollar;</span>119.00 <div class="rrp">290.00</div></div>
+<a href="https://codeshack.io/php-scripts-bundle/" target="_blank">view more details</a>
+</div>
+<div class="package-table-features">
+<div class="package-table-feature">Secure Login & Registration System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Shopping Cart System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">CRUD Application<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Ticketing System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Event Calendar System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Gallery System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Poll and Voting System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Commenting System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Review System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Contact Form<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Live Support Chat System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Newsletter & Mailing System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">File Management System<i class="fas fa-check-circle"></i></div>
+<div class="package-table-feature">Access to future scripts<i class="fas fa-check-circle"></i></div>
+</div>
+<div class="package-table-btns">
+<a href="https://codeshack.io/index.php?page=blog&action=payment&pid=900&type=bundle" rel="nofollow" class="paypal"><span>PayPal</span>Download</a>
+<a href="#" class="stripe stripe-btn" rel="nofollow" data-code="price_1Ldc1xK5KcJwNwwGdv4XqIWT"><span>Stripe</span>Download</a>
+<a href="https://codeshack.io/buy-with-crypto/900/" rel="nofollow" class="alt"><span>Crypto</span>Download</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="share">
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://codeshack.io/event-calendar-php/" aria-label="Share with Facebook" class="fb"><i class="fab fa-facebook-f"></i></a>
+<a target="_blank" href="https://twitter.com/share?text=Event%20Calendar%20with%20PHP&url=https://codeshack.io/event-calendar-php/" aria-label="Share with Twitter" class="tw"><i class="fab fa-twitter"></i></a>
+<a target="_blank" href="https://www.linkedin.com/cws/share?url=https://codeshack.io/event-calendar-php/" aria-label="Share with LinkedIn" class="in"><i class="fab fa-linkedin-in"></i></a>
+<a target="_blank" href="https://pinterest.com/pin/create/button/?url=https://codeshack.io/event-calendar-php/&media=https://codeshack.io/web/img/posts/event-calendar-php.png" aria-label="Share with Pinterest" class="p"><i class="fab fa-pinterest-p"></i></a>
+</div>
+<footer>
+<div class="aboutauthor mjcenter mcenter">
+<h3>About Author</h3>
+<img data-pagespeed-lazy-src="https://codeshack.io/web/img/avatar-200.png" width="150" height="150" alt="David Adams" src="/pagespeed_static/1.JiBnMqyl6S.gif" onload="pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+<div class="m100 mpad">
+<h4>David Adams</h4>
+<p>Enthusiastic website developer, I've been designing and developing web applications for over 10 years, I enjoy the creativity I put into my projects and enjoy what others bring to the awesome web. My goal is to help newcomers learn the ways of the web.</p>
+</div>
+</div>
+<a class="article-tag" href="https://codeshack.io/tag/event-calendar/">event calendar</a>
+<a class="article-tag" href="https://codeshack.io/tag/php/">php</a>
+<a class="article-tag" href="https://codeshack.io/tag/php-class/">php class</a>
+<a class="article-tag" href="https://codeshack.io/tag/programming/">programming</a>
+<div class="prevnext">
+<a class="otherposts" href="https://codeshack.io/commenting-system-php-mysql-ajax/">&larr; Commenting System with PHP, MySQL, and AJAX</a>
+<a class="otherposts" href="https://codeshack.io/hotel-reservation-form-php/">Hotel Reservation Form with PHP &rarr;</a>
+</div>
+<div class="related-posts">
+<h3>Related Posts</h3>
+<div class="related-posts-wrapper">
+<a href="https://codeshack.io/shopping-cart-system-php-mysql/" target="_blank" class="m100">
+<img data-pagespeed-lazy-src="https://codeshack.io/web/img/posts/shopping-cart-system-php-mysql.png" width="245" height="120" alt="Shopping Cart System with PHP and MySQL" src="/pagespeed_static/1.JiBnMqyl6S.gif" onload="pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+<span>Shopping Cart System with PHP and MySQL</span>
+</a>
+<a href="https://codeshack.io/how-to-create-pagination-php-mysql/" target="_blank" class="m100">
+<img data-pagespeed-lazy-src="https://codeshack.io/web/img/posts/how-to-create-pagination-php-mysql.png" width="245" height="120" alt="How to Create Pagination with PHP and MySQL" src="/pagespeed_static/1.JiBnMqyl6S.gif" onload="pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+<span>How to Create Pagination with PHP and MySQL</span>
+</a>
+<a href="https://codeshack.io/poll-voting-system-php-mysql/" target="_blank" class="m100">
+<img data-pagespeed-lazy-src="https://codeshack.io/web/img/posts/poll-voting-system-php-mysql.png" width="245" height="120" alt="Poll and Voting System with PHP and MySQL" src="/pagespeed_static/1.JiBnMqyl6S.gif" onload="pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+<span>Poll and Voting System with PHP and MySQL</span>
+</a>
+</div>
+</div>
+<div id="comments">
+<div id="disqus_thread"></div>
+</div>
+</footer>
+</article>
+</div>
+</main>
+<aside class="m100 mpad">
+<div class="carbon">
+<script type="text/javascript" data-pagespeed-no-defer>pagespeed.lazyLoadImages.overrideAttributeFunctions();</script><script async src="//cdn.carbonads.com/carbon.js?serve=CE7DC2JY&placement=codeshackio" id="_carbonads_js"></script>
+</div>
+<div class="search">
+<input id="search-txt" type="text" placeholder="Search blog ...">
+<a id="search-btn" href="#" aria-label="Search Blog"><i class="fas fa-search"></i></a>
+</div>
+<div class="sideblock subwidget">
+<i class="far fa-envelope"></i>
+<div class="txt1">Become a Subscriber</div>
+<div class="txt2">Stay up to date and join our newsletter to receive the latest updates.</div>
+<input type="email" placeholder="Email Address" id="subemail">
+<a href="#" id="subbtn">Subscribe</a>
+</div>
+<div class="sideblock">
+<h3>Follow Us</h3>
+<div>
+<div class="share">
+<a href="https://www.facebook.com/codeshackio/" aria-label="Facebook" class="fb" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://twitter.com/codeshackio" aria-label="Twitter" class="tw" target="_blank"><i class="fab fa-twitter"></i></a>
+<a href="https://www.youtube.com/channel/UCm3QfVIxL-079Uj31Bk1nMg/" aria-label="YouTube" class="yt" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+</div>
+<div class="sideblock">
+<h3>Recent Posts</h3>
+<div>
+<div class="sideposts">
+<div class="sideposttitle"><a href="https://codeshack.io/build-ai-powered-chatbot-openai-chatgpt-javascript/">Build an AI-Powered Chatbot with OpenAI, ChatGPT, and JavaScript</a></div>
+<div class="sideposttitle"><a href="https://codeshack.io/rss-news-feed-php-mysql/">RSS News Feed with PHP and MySQL</a></div>
+<div class="sideposttitle"><a href="https://codeshack.io/elegant-toast-notifications-javascript/">Elegant Toast Notifications with JavaScript</a></div>
+</div>
+</div>
+</div>
+<div class="sideblock">
+<h3>Tags</h3>
+<div>
+<a class="article-tag" href="https://codeshack.io/tag/tutorials/">tutorials</a>
+<a class="article-tag" href="https://codeshack.io/tag/php/">php</a>
+<a class="article-tag" href="https://codeshack.io/tag/programming/">programming</a>
+<a class="article-tag" href="https://codeshack.io/tag/mysql/">mysql</a>
+<a class="article-tag" href="https://codeshack.io/tag/javascript/">javascript</a>
+<a class="article-tag" href="https://codeshack.io/tag/css/">css</a>
+<a class="article-tag" href="https://codeshack.io/tag/ajax/">ajax</a>
+<a class="article-tag" href="https://codeshack.io/tag/snippets/">snippets</a>
+<a class="article-tag" href="https://codeshack.io/tag/html/">html</a>
+<a class="article-tag" href="https://codeshack.io/tag/freebies/">freebies</a>
+<a class="article-tag" href="https://codeshack.io/tag/form/">form</a>
+<a class="article-tag" href="https://codeshack.io/tag/php-class/">php class</a>
+<a class="article-tag" href="https://codeshack.io/tag/login/">login</a>
+<a class="article-tag" href="https://codeshack.io/tag/shopping-cart/">shopping cart</a>
+<a class="article-tag" href="https://codeshack.io/tag/scripting/">scripting</a>
+<a class="article-tag" href="https://codeshack.io/tag/pdo/">pdo</a>
+<a class="article-tag" href="https://codeshack.io/tag/mysqli/">mysqli</a>
+<a class="article-tag" href="https://codeshack.io/tag/javascript-class/">javascript class</a>
+<a class="article-tag" href="https://codeshack.io/tag/registration/">registration</a>
+<a class="article-tag" href="https://codeshack.io/tag/flask/">flask</a>
+<a class="article-tag" href="https://codeshack.io/tag/ticketing-system/">ticketing system</a>
+<a class="article-tag" href="https://codeshack.io/tag/database/">database</a>
+<a class="article-tag" href="https://codeshack.io/tag/toast-notifications/">toast notifications</a>
+<a class="article-tag" href="https://codeshack.io/tag/snippet/">snippet</a>
+<a class="article-tag" href="https://codeshack.io/tag/register/">register</a>
+<a class="article-tag" href="https://codeshack.io/tag/gallery-system/">gallery system</a>
+<a class="article-tag" href="https://codeshack.io/tag/mailing-list/">mailing list</a>
+<a class="article-tag" href="https://codeshack.io/tag/live-support-chat/">live support chat</a>
+<a class="article-tag" href="https://codeshack.io/tag/sessions/">sessions</a>
+<a class="article-tag" href="https://codeshack.io/tag/pagination/">pagination</a>
+<a class="article-tag" href="https://codeshack.io/tag/hotel-reservation-form/">hotel reservation form</a>
+<a class="article-tag" href="https://codeshack.io/tag/columns/">columns</a>
+<a class="article-tag" href="https://codeshack.io/tag/template/">template</a>
+<a class="article-tag" href="https://codeshack.io/tag/commenting-system/">commenting system</a>
+<a class="article-tag" href="https://codeshack.io/tag/event-calendar/">event calendar</a>
+<a class="article-tag" href="https://codeshack.io/tag/review-system/">review system</a>
+<a class="article-tag" href="https://codeshack.io/tag/progress-bar/">progress bar</a>
+<a class="article-tag" href="https://codeshack.io/tag/newsletter-system/">newsletter system</a>
+<a class="article-tag" href="https://codeshack.io/tag/js/">js</a>
+<a class="article-tag" href="https://codeshack.io/tag/node.js/">node.js</a>
+<a class="article-tag" href="https://codeshack.io/tag/express/">express</a>
+<a class="article-tag" href="https://codeshack.io/tag/table/">table</a>
+<a class="article-tag" href="https://codeshack.io/tag/voting-system/">voting system</a>
+<a class="article-tag" href="https://codeshack.io/tag/crud/">crud</a>
+<a class="article-tag" href="https://codeshack.io/tag/mvc/">mvc</a>
+<a class="article-tag" href="https://codeshack.io/tag/python/">python</a>
+<a class="article-tag" href="https://codeshack.io/tag/modals/">modals</a>
+<a class="article-tag" href="https://codeshack.io/tag/cookie/">cookie</a>
+<a class="article-tag" href="https://codeshack.io/tag/content-locker/">content locker</a>
+<a class="article-tag" href="https://codeshack.io/tag/progamming/">progamming</a>
+<a class="article-tag" href="https://codeshack.io/tag/file-upload/">file upload</a>
+<a class="article-tag" href="https://codeshack.io/tag/survey-form/">survey form</a>
+<a class="article-tag" href="https://codeshack.io/tag/jquery/">jquery</a>
+<a class="article-tag" href="https://codeshack.io/tag/sort/">sort</a>
+<a class="article-tag" href="https://codeshack.io/tag/poll-system/">poll system</a>
+<a class="article-tag" href="https://codeshack.io/tag/contact/">contact</a>
+</div>
+</div>
+</aside>
+</div>
+<footer class="footer m100">
+<div class="con1 m100">
+<div class="mhide footer-links">
+<h2 class="site-name"><img data-pagespeed-lazy-src="https://codeshack.io/web/img/icon.png" alt="CodeShack" width="32" height="32" src="/pagespeed_static/1.JiBnMqyl6S.gif" onload="pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">CodeShack.io</h2>
+<a href="https://codeshack.io/packages/">Packages</a>
+<a href="https://codeshack.io/tutorials/">Tutorials</a>
+<a href="https://codeshack.io/examples/">Examples</a>
+<a href="https://codeshack.io/references/">References</a>
+</div>
+<div class="mhide footer-links">
+<a href="https://codeshack.io/tools/">Tools</a>
+<a href="https://codeshack.io/code-editor/">Live Code Editor</a>
+<a href="https://codeshack.io/json-sorter/">JSON Sorter</a>
+<a href="https://codeshack.io/receiptresend/">Resend a Receipt</a>
+</div>
+<div class="mhide footer-links">
+<a href="https://codeshack.io/about/">About Us</a>
+<a href="https://codeshack.io/contact/">Contact Us</a>
+<a href="https://codeshack.io/privacy-policy/">Privacy Policy</a>
+<a href="https://codeshack.io/terms/">Terms</a>
+</div>
+<div class="m100 mcenter">
+<h2>Follow Us</h2>
+<div class="share share-alt">
+<a target="_blank" href="https://www.facebook.com/codeshackio/" aria-label="Facebook" class="fb"><i class="fab fa-facebook-f"></i></a>
+<a target="_blank" href="https://twitter.com/codeshackio" aria-label="Twitter" class="tw"><i class="fab fa-twitter"></i></a>
+</div>
+</div>
+</div>
+<div class="con2 mhide">
+<div>&copy; 2023 CodeShack. All Rights Reserved. By using this website you accept the <a href="https://codeshack.io/terms/">terms and conditions</a>.</div>
+</div>
+</footer>
+<script type="text/javascript" data-pagespeed-no-defer>pagespeed.lazyLoadImages.overrideAttributeFunctions();</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-C042H5T5VM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-C042H5T5VM');</script>
+<script async src="https://kit.fontawesome.com/e0fce4bf75.js" crossorigin="anonymous"></script>
+<script>const DEFAULT_URL="https://codeshack.io/";const PAYMENT_TESTMODE=false;</script>
+<script src="https://codeshack.io/web/js/script.min.js?v=7.1.2"></script>
+<script>var disqus_config=function(){this.page.url='https://codeshack.io/event-calendar-php/';this.page.identifier=82;};(function(){var d=document,s=d.createElement('script');s.src='https://codeshack.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();(function(){if(!isMobile()){const d=document,s=d.createElement('script');s.src='https://codeshack.io/web/js/codesyntaxhighlight.js?v=1.2.0';s.setAttribute('defer','defer');(d.head||d.body).appendChild(s);}else{const css='pre,code{background-color:#F4F5F7;margin-top:6px;padding:5px;}';const e=document.createElement('style');e.setAttribute('type','text/css');if('textContent'in e){e.textContent=css;}else{e.styleSheet.cssText=css;}document.head.appendChild(e);}})();</script>
+</body>
+</html>
