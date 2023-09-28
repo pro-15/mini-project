@@ -77,19 +77,19 @@
 		  			<h2><i class="fa fa-h-square"></i>ealth Center</h2>
 					<h4>Hello! let's get started</h4>
 					<h5 class="text-muted">Sign in to continue.</h5>
-					<form class="pt-3">
-						<div class="form-group">
+					<form method="POST" class="form-group form-group-lg">
+						<div class="col-md-12 col-sm-12">
 							<?= $form->textBox('email', array('id' => 'email', 'class' => 'form-control', 'placeholder' => 'Email')); ?>
                             <?= $validator->error('email'); ?>
 							<!-- <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email"> -->
 						</div>
-						<div class="form-group">
+						<div class="col-md-12 col-sm-12">
 							<?= $form->textBox('email', array('id' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
                             <?= $validator->error('email'); ?>
 							<!-- <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"> -->
 						</div>
-						<div class="mt-3">
-							<a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="index.html">SIGN IN</a>
+						<div class="col-md-12 col-sm-12">
+							<button id="cf-submit" class="btn btn-primary form-control" href="index.html">SIGN IN</button>
 						</div>
 						<!-- <div class="my-2 d-flex justify-content-between align-items-center"> -->
 						<div class="my-2 justify-content-between align-items-center text-center">
