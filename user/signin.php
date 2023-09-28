@@ -67,16 +67,18 @@
 
 
 
-	<section id="login" data-stellar-background-ratio="3">
+	<section id="signin-form" data-stellar-background-ratio="3">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 center-block">
 					<!-- <div class="brand-logo">
           <img src="assets/images/logo.svg">
         </div> -->
-		  			<h2><i class="fa fa-h-square"></i>ealth Center</h2>
-					<h4>Hello! let's get started</h4>
-					<h5 class="text-muted">Sign in to continue.</h5>
+					<div class="col-md-12 col-sm-12">
+						<h2 class="brand"><i class="fa fa-h-square"></i>ealth Center</h2>
+						<h4>Hello! let's get started</h4>
+						<h5 class="text-muted">Sign in to continue.</h5>
+					</div>
 					<form method="POST" class="form-group form-group-lg">
 						<div class="col-md-12 col-sm-12">
 							<?= $form->textBox('email', array('id' => 'email', 'class' => 'form-control', 'placeholder' => 'Email')); ?>
@@ -89,7 +91,7 @@
 							<!-- <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"> -->
 						</div>
 						<div class="col-md-12 col-sm-12">
-							<button id="cf-submit" class="btn btn-primary form-control" href="index.html">SIGN IN</button>
+							<button id="signin" class="btn btn-primary form-control" name="signin">SIGN IN</button>
 						</div>
 						<!-- <div class="my-2 d-flex justify-content-between align-items-center"> -->
 						<div class="my-2 justify-content-between align-items-center text-center">
@@ -106,32 +108,18 @@
 			</div>
 		</div>
 	</section>
-	<!-- container-scroller -->
-	<!-- plugins:js -->
-	<script src="assets/vendors/js/vendor.bundle.base.js"></script>
-	<!-- endinject -->
-	<!-- Plugin js for this page -->
-	<!-- End plugin js for this page -->
-	<!-- inject:js -->
-	<script src="assets/js/off-canvas.js"></script>
-	<script src="assets/js/hoverable-collapse.js"></script>
-	<script src="assets/js/misc.js"></script>
-	<!-- endinject -->
+	
 
-	<!--===============================================================================================-->
-	<script src="login/vendor/jquery/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="login/vendor/animsition/js/animsition.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="login/vendor/bootstrap/js/popper.js"></script>
-	<script src="login/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="login/vendor/daterangepicker/moment.min.js"></script>
-	<script src="login/vendor/daterangepicker/daterangepicker.js"></script>
-	<!--===============================================================================================-->
-	<script src="login/vendor/countdowntime/countdowntime.js"></script>
-	<!--===============================================================================================-->
-	<script src="login/js/main.js"></script>
+	<!-- SCRIPTS -->
+	<script src="user/assets/js/2098/jquery.js"></script>
+	<script src="user/assets/js/2098/bootstrap.min.js"></script>
+	<script src="user/assets/js/2098/jquery.sticky.js"></script>
+	<script src="user/assets/js/2098/jquery.stellar.min.js"></script>
+	<script src="user/assets/js/2098/wow.min.js"></script>
+	<script src="user/assets/js/2098/smoothscroll.js"></script>
+	<script src="user/assets/js/2098/owl.carousel.min.js"></script>
+	<script src="user/assets/js/2098/custom.js"></script>
+	<script src="user/assets/js/2098/valid.js"></script>
 
 </body>
 
