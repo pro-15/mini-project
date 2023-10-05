@@ -30,10 +30,10 @@
 
 
 
-<?php
+	<?php
 	$dao = new DataAccess();
 
-	if(isset($_SESSION['name']))
+	if (isset($_SESSION['name']))
 		echo "<script> location.replace('dash.php'); </script>";
 	// header('location:student/index.php');
 
@@ -82,33 +82,35 @@
 					<form method="POST" class="form-group form-group-lg">
 						<div class="col-md-12 col-sm-12">
 							<?= $form->textBox('email', array('id' => 'email', 'class' => 'form-control', 'placeholder' => 'Email')); ?>
-                            <?= $validator->error('email'); ?>
+							<?= $validator->error('email'); ?>
 							<!-- <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email"> -->
 						</div>
 						<div class="col-md-12 col-sm-12">
 							<?= $form->textBox('email', array('id' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
-                            <?= $validator->error('email'); ?>
+							<?= $validator->error('email'); ?>
 							<!-- <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"> -->
 						</div>
 						<div class="col-md-12 col-sm-12">
 							<button id="signin" class="btn btn-primary form-control" name="signin">SIGN IN</button>
 						</div>
 						<!-- <div class="my-2 d-flex justify-content-between align-items-center"> -->
-						<div class="my-2 justify-content-between align-items-center text-center">
-							<!-- <div class="form-check">
-                      <label class="form-check-label text-muted">
-                        <input type="checkbox" class="form-check-input"> Keep me signed in </label>
-                    </div> -->
-							<a href="#" class="auth-link text-black">Forgot password?</a>
-						</div>
-						<div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="register.php" class="text-primary">Create</a>
+						<!-- <div class="my-2 justify-content-between align-items-center text-center">
+							<div class="form-check">
+								<label class="form-check-label text-muted">
+									<input type="checkbox" class="form-check-input"> Keep me signed in </label>
+							</div>
+						</div> -->
+						<div class="text-center">
+							<a href="#">Forgot password?</a>
+							<br>
+							<a href="register.php">Create new account</a>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</section>
-	
+
 
 	<!-- SCRIPTS -->
 	<script src="user/assets/js/2098/jquery.js"></script>
