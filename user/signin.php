@@ -33,9 +33,8 @@
 	<?php
 	$dao = new DataAccess();
 
-	if (isset($_SESSION['name']))
-		echo "<script> location.replace('dash.php'); </script>";
-	// header('location:student/index.php');
+	// if (isset($_SESSION['email']))
+	// 	echo "<script> location.replace('../index.php'); </script>";
 
 	$elements = array("email" => "", "password" => "");
 	$form = new FormAssist($elements, $_POST);
@@ -45,15 +44,16 @@
 	);
 	$validator = new FormValidator($rules);
 
-	if (isset($_POST['login'])) {
+	if (isset($_POST['signin'])) {
 		if ($validator->validate($_POST)) {
-			$data = array('uemail' => $_POST['email'], 'upassword' => $_POST['password']);
-			if ($info = $dao->login($data, 'users')) {
-				$_SESSION['email'] = $info['uemail'];
-				$_SESSION['name'] = $info['uname'];
+			$data = array('email' => $_POST['email'], 'pass' => $_POST['password']);
+			if ($info = $dao->login($data, 'userdat')) {
+				$_SESSION['email'] = $info['email'];
+				$_SESSION['fname'] = $info['fname'];
+				//$_SESSION['lname'] = $info['lname'];
 				$a = $_SESSION['email'];
 				echo "<script> alert('$a');</script> ";
-				echo "<script> location.replace('dash.php'); </script>";
+				echo "<script> location.replace('../index.php'); </script>";
 				// header('location:student/index.html');
 			} else {
 				$msg = "invalid username or password";
@@ -90,8 +90,8 @@
 							<!-- <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email"> -->
 						</div>
 						<div class="col-md-12 col-sm-12">
-							<?= $form->textBox('email', array('id' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
-							<?= $validator->error('email'); ?>
+							<?= $form->textBox('password', array('id' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
+							<?= $validator->error('password'); ?>
 							<!-- <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"> -->
 						</div>
 						<div class="col-md-12 col-sm-12">
