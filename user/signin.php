@@ -76,7 +76,7 @@
         </div> -->
 					<div class="col-md-12 col-sm-12">
 						<h2 class="brand">
-							<a href="../index.html">
+							<a href="../index.php">
 								<i class="fa fa-h-square"></i>ealth Center
 							</a>
 						</h2>
@@ -90,7 +90,7 @@
 							<!-- <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email"> -->
 						</div>
 						<div class="col-md-12 col-sm-12">
-							<?= $form->textBox('password', array('id' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
+							<?= $form->passwordBox('password', array('id' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
 							<?= $validator->error('password'); ?>
 							<!-- <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"> -->
 						</div>
