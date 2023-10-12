@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 11, 2023 at 07:36 AM
+-- Generation Time: Oct 12, 2023 at 10:42 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -104,7 +104,14 @@ CREATE TABLE IF NOT EXISTS `userdat` (
   PRIMARY KEY (`pid`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `mobile` (`mobile`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `userdat`
+--
+
+INSERT INTO `userdat` (`pid`, `fname`, `lname`, `email`, `mobile`, `pass`, `status`) VALUES
+(1, 'Aj', 'ks', 'ajks@mail.com', '9946884520', '098', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
