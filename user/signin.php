@@ -75,7 +75,11 @@
           <img src="assets/images/logo.svg">
         </div> -->
 					<div class="col-md-12 col-sm-12">
-						<h2 class="brand"><i class="fa fa-h-square"></i>ealth Center</h2>
+						<h2 class="brand">
+							<a href="../index.html">
+								<i class="fa fa-h-square"></i>ealth Center
+							</a>
+						</h2>
 						<h4>Hello! let's get started</h4>
 						<h5 class="text-muted">Sign in to continue.</h5>
 					</div>

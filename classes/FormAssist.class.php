@@ -404,8 +404,12 @@ class FormAssist
 			$str="";
 			foreach($attributes as $name=>$val)
 			{
-				if($name!='name' && $name!='value' && $name!='type')
-				$str.=" $name='$val' ";
+				if($name!='name' && $name!='value' && $name!='type'){
+					if($val == "") {
+						$str.=" $name ";
+					}
+					else $str.=" $name='$val' ";
+				}
 			}
 			return $str;
 		}
