@@ -57,8 +57,7 @@
 					<li><a href="#about" class="smoothScroll">About Us</a></li>
 					<li><a href="#team" class="smoothScroll">Doctors</a></li>
 					<li><a href="#news" class="smoothScroll">News</a></li>
-					<li><a href="#google-map" class="smoothScroll">Contact</a></li>
-					<li class="appointment-btn"><a href="#appointment">Make an appointment</a></li>
+					<li class="appointment-btn"><a href="user/book.php">Book Now</a></li>
 				</ul>
 			</div>
 

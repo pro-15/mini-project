@@ -70,7 +70,7 @@ h6 {
 
 p {
   color: #757575;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: normal;
   line-height: 24px;
 }
@@ -338,12 +338,33 @@ header span i {
 
 .navbar-default .navbar-brand {
   color: #393939;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .navbar-default .navbar-brand .fa {
   color: #a5c422;
+  margin-right: 0.1ch;
 }
+
+
+
+
+
+
+/* ############################################################################## */
+/* ############################################################################## */
+/* ############################################################################## */
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #a5c422 !important;
+}
+/* ############################################################################## */
+/* ############################################################################## */
+/* ############################################################################## */
+
+
+
+
 
 .navbar-default .navbar-nav li.appointment-btn {
   margin: 3px 0 0 20px;
@@ -365,7 +386,7 @@ header span i {
 
 .navbar-default .navbar-nav li a {
   color: #555555;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   padding-right: 20px;
   padding-left: 20px;
@@ -374,12 +395,12 @@ header span i {
 }
 
 .navbar-default .navbar-nav>li a:hover {
-  color: #393939 !important;
+  color: #a5c422 !important;
 }
 
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus {
-  color: #555555;
+  color: #a5c422;
   background-color: transparent;
 }
 

@@ -46,12 +46,29 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-12 col-sm-12">
 					<div class="about-info">
 						<h2 class="wow fadeInUp" data-wow-delay="0.6s">Welcome to Your <i class="fa fa-h-square"></i>ealth Center</h2>
 						<div class="wow fadeInUp" data-wow-delay="0.8s">
-							<p>Aenean luctus lobortis tellus, vel ornare enim molestie condimentum. Curabitur lacinia nisi vitae velit volutpat venenatis.</p>
-							<p>Sed a dignissim lacus. Quisque fermentum est non orci commodo, a luctus urna mattis. Ut placerat, diam a tempus vehicula.</p>
+							<p>
+								Your health and well-being are at the heart of everything we do. At our hospital,
+								we understand the importance of compassionate care, and we're dedicated to providing
+								you and your loved ones with the highest standard of medical excellence.
+							</p>
+							<p>
+								Our team of dedicated healthcare professionals is here to support you on your journey 
+								to health and healing. We take pride in offering a warm and welcoming environment where 
+								you'll find not just medical expertise, but also the care and understanding you deserve.
+							</p>
+							<p>
+								Your health is our top priority, and we're committed to being your trusted partner in 
+								this journey. We believe in a future where good health is accessible to all, and we're 
+								excited to take this journey with you.
+							</p>
+							<p>
+								Thank you for choosing <b><i class="fa fa-h-square"></i>ealth Center</b>, where your health is our mission, 
+								and your well-being is our passion.
+							</p>
 						</div>
 						<figure class="profile wow fadeInUp" data-wow-delay="1s">
 							<img src="user/assets/images/2098/author-image.jpg" class="img-responsive" alt="">

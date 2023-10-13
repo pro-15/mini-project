@@ -48,8 +48,9 @@
 		if ($validator->validate($_POST)) {
 			$data = array('email' => $_POST['email'], 'pass' => $_POST['password']);
 			if ($info = $dao->login($data, 'userdat')) {
-				$_SESSION['email'] = $info['email'];
-				$_SESSION['fname'] = $info['fname'];
+				$_SESSION['pid'] = $info['pid'];
+				//$_SESSION['email'] = $info['email'];
+				//$_SESSION['fname'] = $info['fname'];
 				//$_SESSION['lname'] = $info['lname'];
 				$a = $_SESSION['email'];
 				echo "<script> alert('$a');</script> ";
@@ -107,7 +108,7 @@
 						<div class="text-center">
 							<a href="#">Forgot password?</a>
 							<br>
-							<a href="register.php">Create new account</a>
+							<a href="signup.php">Create new account</a>
 						</div>
 					</form>
 				</div>

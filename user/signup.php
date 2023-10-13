@@ -65,12 +65,12 @@
 				'fname' => $_POST['fname'],
 				'lname' => $_POST['lname'],
 				'mobile' => $_POST['mobile'],
-				'uemail' => $_POST['email'],
-				'upass' => $_POST['pass']
+				'email' => $_POST['email'],
+				'pass' => $_POST['pass']
 			);
 			if ($dao->insert($data, 'userdat')) {
-                echo "<script> alert('Inserted Successfully'); </script>";
-                echo "<script> location.replace('displaycategory.php'); </script>";
+                echo "<script> alert('Sign in to continue'); </script>";
+                echo "<script> location.replace('signin.php'); </script>";
             }
 			else
                 echo "<script> alert('Insertion failed'); </script>";
@@ -125,7 +125,7 @@
 							<button id="signup" class="btn btn-primary form-control" name="signup">SIGN UP</button>
 						</div>
 						<div class="text-center">
-							<a href="register.php">Already have an account?</a>
+							<a href="signin.php">Already have an account?</a>
 						</div>
 					</form>
 				</div>
