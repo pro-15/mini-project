@@ -57,7 +57,23 @@
 					<li><a href="#about" class="smoothScroll">About Us</a></li>
 					<li><a href="#team" class="smoothScroll">Doctors</a></li>
 					<li><a href="#news" class="smoothScroll">News</a></li>
-					<li class="appointment-btn"><a href="user/book.php">Book Now</a></li>
+					<li><a href="user/book.php"><b>Book Now</b></a></li>
+					<li>
+					<?php 
+						if(isset($_SESSION['pid'])) {
+							echo "<div class='dropdown'>
+  								<a class='dropdown-toggle' id='dropdownMenuButton' data-toggle='dropdown'>
+									<i class='fa fa-user'></i>".$_SESSION['name'].
+								"</a>
+								<div class='dropdown-menu'>
+									<a class='dropdown-item' href='user/dash.php'>Dashboard</a>
+									<a class='dropdown-item' href='config/signout.php'>Sign out</a>
+								</div>
+							</div>";
+						}
+						else echo "<a href='user/signin.php'>Sign In</a>";
+					?>
+					</li>
 				</ul>
 			</div>
 

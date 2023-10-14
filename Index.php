@@ -45,41 +45,30 @@
 	<section id="about">
 		<div class="container">
 			<div class="row">
-
-				<div class="col-md-12 col-sm-12">
+				<div class="col-md-6 col-sm-6">
 					<div class="about-info">
 						<h2 class="wow fadeInUp" data-wow-delay="0.6s">Welcome to Your <i class="fa fa-h-square"></i>ealth Center</h2>
 						<div class="wow fadeInUp" data-wow-delay="0.8s">
 							<p>
-								Your health and well-being are at the heart of everything we do. At our hospital,
-								we understand the importance of compassionate care, and we're dedicated to providing
+								Your health and well-being are at the heart of everything we do.
+								We understand the importance of compassionate care, and we're dedicated to providing
 								you and your loved ones with the highest standard of medical excellence.
 							</p>
-							<p>
+							<!-- <p>
 								Our team of dedicated healthcare professionals is here to support you on your journey 
 								to health and healing. We take pride in offering a warm and welcoming environment where 
 								you'll find not just medical expertise, but also the care and understanding you deserve.
-							</p>
-							<p>
-								Your health is our top priority, and we're committed to being your trusted partner in 
-								this journey. We believe in a future where good health is accessible to all, and we're 
-								excited to take this journey with you.
-							</p>
-							<p>
-								Thank you for choosing <b><i class="fa fa-h-square"></i>ealth Center</b>, where your health is our mission, 
-								and your well-being is our passion.
-							</p>
+							</p> -->
 						</div>
 						<figure class="profile wow fadeInUp" data-wow-delay="1s">
 							<img src="user/assets/images/2098/author-image.jpg" class="img-responsive" alt="">
 							<figcaption>
-								<h3>Dr. Neil Jackson</h3>
-								<p>General Principal</p>
+								<h3>Dr. Jeremie Carlson</h3>
+								<p>CEO / Founder</p>
 							</figcaption>
 						</figure>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</section>
@@ -120,10 +109,10 @@
 
 				<div class="col-md-4 col-sm-6">
 					<div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
-						<img src="user/assets/images/2098/team-image2.jpg" class="img-responsive" alt="">
+						<img src="user/assets/images/2098/team-image3.jpg" class="img-responsive" alt="">
 
 						<div class="team-info">
-							<h3>Jason Stewart</h3>
+							<h3>Miasha Nakahara</h3>
 							<p>Pregnancy</p>
 							<div class="team-contact-info">
 								<p><i class="fa fa-phone"></i> 010-070-0170</p>
@@ -141,10 +130,10 @@
 
 				<div class="col-md-4 col-sm-6">
 					<div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
-						<img src="user/assets/images/2098/team-image3.jpg" class="img-responsive" alt="">
+						<img src="user/assets/images/2098/team-image2.jpg" class="img-responsive" alt="">
 
 						<div class="team-info">
-							<h3>Miasha Nakahara</h3>
+							<h3>Jason Stewart</h3>
 							<p>Cardiology</p>
 							<div class="team-contact-info">
 								<p><i class="fa fa-phone"></i> 010-040-0140</p>
@@ -258,4 +247,4 @@
 
 	<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</section> -->
-<?php require("footer.html"); ?>
+<?php require("footer.php"); ?>

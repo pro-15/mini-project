@@ -1219,6 +1219,46 @@ footer a:hover {
   color: #ffffff;
 }
 
+/*---------------------------------------
+      BOOK             
+  -----------------------------------------*/
+
+  #book-form {
+    padding-top: 100px;
+  }
+  
+  #book-form label {
+    color: #393939;
+    font-weight: 500;
+  }
+  
+  #book-form .form-control {
+    background: #f9f9f9;
+    border: none;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    transition: all ease-in-out 0.4s;
+  }
+  
+  #book-form input,
+  #book-form select {
+    height: 45px;
+  }
+  
+  #book-form button#book {
+    background: #a5c422;
+    color: #ffffff;
+    font-weight: 600;
+    height: 55px;
+  }
+  
+  #book-form button#book:hover {
+    background: #393939;
+    color: #ffffff;
+  }
 
 /*------------------------------------------------------------------
 [ Alert validate ]*/
@@ -1285,6 +1325,14 @@ footer a:hover {
     visibility: visible;
     opacity: 1;
   }
+}
+
+.err-msg {
+  color : #c80000;
+}
+
+.fa-space .fa {
+  margin-right: 0.1ch;
 }
 
 /*

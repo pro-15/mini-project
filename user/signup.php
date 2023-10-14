@@ -44,7 +44,14 @@
 
 	$form = new FormAssist($elements, $_POST);
 	//$file=new FileUpload();
-	$labels = array('fname' => "First Name", 'lname' => "Last Name", "email" => "Email Id", "mobile" => "Mobile Number", "pass" => "Password", "cpass" => "Confirm Password");
+	$labels = array(
+		'fname' => "",
+		'lname' => "",
+		"email" => "",
+		"mobile" => "",
+		"pass" => "",
+		"cpass" => ""
+	);
 
 	$rules = array(
 		"fname" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaspaceonly" => true),
@@ -98,28 +105,34 @@
 					</div>
 					<form method="POST" class="form-group form-group-lg">
                         <div class="col-md-6 col-sm-6">
-                            <?= $validator->error('fname'); ?>
-							<?= $form->textBox('fname', array('id' => 'fname', 'class' => 'form-control', 'placeholder' => $labels['fname'])); ?>
+							<label for='fname'>First Name</label>
+                            <?= "<span class='err-msg'>".$validator->error('fname')."</span>" ?>
+							<?= $form->textBox('fname', array('id' => 'fname', 'class' => 'form-control', 'placeholder' => 'First Name')); ?>
 						</div>
                         <div class="col-md-6 col-sm-6">
-                            <?= $validator->error('lname'); ?>
-							<?= $form->textBox('lname', array('id' => 'lname', 'class' => 'form-control', 'placeholder' => $labels['lname'])); ?>
+							<label for='lname'>Last Name</label>
+                            <?= "<span class='err-msg'>".$validator->error('lname')."</span>" ?>
+							<?= $form->textBox('lname', array('id' => 'lname', 'class' => 'form-control', 'placeholder' => 'Last Name')); ?>
 						</div>
 						<div class="col-md-6 col-sm-6">
-                            <?= $validator->error('email'); ?>
-							<?= $form->textBox('email', array('id' => 'email', 'class' => 'form-control', 'placeholder' => $labels['email'])); ?>
+							<label for='email'>Email</label>
+                            <?= "<span class='err-msg'>".$validator->error('email')."</span>" ?>
+							<?= $form->textBox('email', array('id' => 'email', 'class' => 'form-control', 'placeholder' => 'Email')); ?>
 						</div>
                         <div class="col-md-6 col-sm-6">
-							<?= $validator->error('mobile'); ?>
-                            <?= $form->textBox('mobile', array('id' => 'mobile', 'class' => 'form-control', 'placeholder' => $labels['mobile'])); ?>
+							<label for='mobile'>Mobile</label>
+							<?= "<span class='err-msg'>".$validator->error('mobile')."</span>" ?>
+                            <?= $form->textBox('mobile', array('id' => 'mobile', 'class' => 'form-control', 'placeholder' => 'Mobile')); ?>
 						</div>
 						<div class="col-md-6 col-sm-6">
-							<?= $validator->error('pass'); ?>
-                            <?= $form->passwordBox('pass', array('id' => 'pass', 'class' => 'form-control', 'placeholder' => $labels['pass'])); ?>
+							<label for='pass'>Password</label>
+							<?= "<span class='err-msg'>".$validator->error('pass')."</span>" ?>
+                            <?= $form->passwordBox('pass', array('id' => 'pass', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
 						</div>
                         <div class="col-md-6 col-sm-6">
-							<?= $validator->error('cpass'); ?>
-                            <?= $form->passwordBox('cpass', array('id' => 'cpass', 'class' => 'form-control', 'placeholder' => $labels['cpass'])); ?>
+							<label for='cpass'>Confirm Password</label>
+							<?= "<span class='err-msg'>".$validator->error('cpass')."</span>" ?>
+                            <?= $form->passwordBox('cpass', array('id' => 'cpass', 'class' => 'form-control', 'placeholder' => 'Confirm Password')); ?>
 						</div>
 						<div class="col-md-12 col-sm-12">
 							<button id="signup" class="btn btn-primary form-control" name="signup">SIGN UP</button>

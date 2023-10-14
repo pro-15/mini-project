@@ -42,22 +42,27 @@
 		'email' => array('required' => true),
 		'password' => array('required' => true),
 	);
-	$validator = new FormValidator($rules);
+	$labels = array(
+		'email' => '',
+		'password' => '',
+	);
+	$validator = new FormValidator($rules, $labels);
 
 	if (isset($_POST['signin'])) {
 		if ($validator->validate($_POST)) {
 			$data = array('email' => $_POST['email'], 'pass' => $_POST['password']);
 			if ($info = $dao->login($data, 'userdat')) {
 				$_SESSION['pid'] = $info['pid'];
+				$_SESSION['name'] = $info['fname'].' '.$info['lname'];
+				$_SESSION['setTime'] = time();
 				//$_SESSION['email'] = $info['email'];
 				//$_SESSION['fname'] = $info['fname'];
 				//$_SESSION['lname'] = $info['lname'];
-				$a = $_SESSION['email'];
-				echo "<script> alert('$a');</script> ";
+				//echo "<script> alert('$a');</script> ";
 				echo "<script> location.replace('../index.php'); </script>";
 				// header('location:student/index.html');
 			} else {
-				$msg = "invalid username or password";
+				//$msg = "invalid username or password";
 				echo "<script> alert('Invalid username or password');</script> ";
 			}
 		}
@@ -86,13 +91,15 @@
 					</div>
 					<form method="POST" class="form-group form-group-lg">
 						<div class="col-md-12 col-sm-12">
+							<label for='email'>Email</label>
+							<?= "<span class='err-msg'>".$validator->error('email')."</span>" ?>
 							<?= $form->textBox('email', array('id' => 'email', 'class' => 'form-control', 'placeholder' => 'Email')); ?>
-							<?= $validator->error('email'); ?>
 							<!-- <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email"> -->
 						</div>
 						<div class="col-md-12 col-sm-12">
+							<label for='password'>Password</label>
+							<?= "<span class='err-msg'>".$validator->error('password')."</span>" ?>
 							<?= $form->passwordBox('password', array('id' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
-							<?= $validator->error('password'); ?>
 							<!-- <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"> -->
 						</div>
 						<div class="col-md-12 col-sm-12">

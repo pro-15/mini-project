@@ -1,9 +1,7 @@
 <?php
     require("../config/autoload.php");
-    if(!isset($_SESSION['pid'])) {
-        //header("Location : signin.php");
-        echo "<script>location.replace('signin.php');</script>";
-    }
+    if(!isset($_SESSION['pid'])) echo "<script>location.replace('signin.php');</script>";
+	//header("Location : signin.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,26 +38,25 @@
 
     $dao = new DataAccess();
 	$elements = array(
-		"pid" => "",
 		"did" => "",
-		"date_gen" => "",
-		"date_bok" => "",
+		"date_bok" => date("Y-m-d"),
 		"slot" => ""
 	);
+	if(isset($_GET['id'])) $elements += array("id" => $_GET['id']);
+	else $elements += array("id" => '');
 
 	$form = new FormAssist($elements, $_POST);
 	//$file=new FileUpload();
-	$labels = array('pid' => '',
-                    'did' => '',
-                    'date_gen' => '',
-                    'date_bok' => '',
-                    'slot' => ''
-                );
+	$labels = array(
+		'id' => '',
+		'did' => '',
+        'date_bok' => '',
+        'slot' => ''
+    );
 
 	$rules = array(
-		"pid" => array("required" => true),
+		"id" => array("required" => true),
 		"did" => array("required" => true),
-		"date_gen" => array("required" => true),
 		"date_bok" => array("required" => true),
 		"slot" => array("required" => true)
 	);
@@ -79,10 +76,10 @@
 			);
 			if ($dao->insert($data, 'book')) {
                 echo "<script> alert('Booking Completed'); </script>";
-                echo "<script> location.replace('index.php'); </script>";
+                echo "<script> location.replace('../index.php'); </script>";
             }
 			else
-                echo "<script> alert('Insertion failed'); </script>";
+                echo "<script> alert('Failed'); </script>";
 		}
 	}
 
@@ -92,7 +89,7 @@
 
 <!-- tooplate-style.css -->
 
-<section id="signup-form" data-stellar-background-ratio="3">
+<section id="book-form" data-stellar-background-ratio="3">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 center-block">
@@ -102,39 +99,91 @@
 								<i class="fa fa-h-square"></i>ealth Center
 							</a>
 						</h2>
-						<h4>New here?</h4>
-						<h5 class="text-muted">Signing up is easy. It only takes a few steps</h5>
+						<h4>Meet you doctor</h4>
+						<h5 class="text-muted">Book a slot to meet your doctor</h5>
 					</div>
 					<form method="POST" class="form-group form-group-lg">
                         <div class="col-md-6 col-sm-6">
-                            <?= $validator->error('fname'); ?>
-							<?= $form->textBox('fname', array('id' => 'fname', 'class' => 'form-control', 'placeholder' => $labels['fname'])); ?>
+							<label for='id'>Specialization</label>
+                            <?= "<span class='err-msg'>".$validator->error('id')."</span>" ?>
+							<?=
+								$form->dropDownList(
+									'id',
+									array(
+										'id' => 'id',
+										'class' => 'form-control',
+										'onchange' => 'cellChange()'
+									),
+									$dao->createOptions(
+										'dept',
+										'id',
+										'dept'
+									)
+								);
+							?>
 						</div>
                         <div class="col-md-6 col-sm-6">
-                            <?= $validator->error('lname'); ?>
-							<?= $form->textBox('lname', array('id' => 'lname', 'class' => 'form-control', 'placeholder' => $labels['lname'])); ?>
+							<label for='did'>Doctor</label>
+                            <?= "<span class='err-msg'>".$validator->error('did')."</span>" ?>
+							<?php
+								$dept = '0';
+								if(isset($_GET['id'])) $dept = $_GET['id'];
+								echo $form->dropDownList(
+									'did',
+									array(
+										'id' => 'did',
+										'class' => 'form-control'
+									),
+									$dao->createOptions(
+										'dname',		// Label
+										'did',			// Value
+										'doc',			// Table
+										"id = $dept"	// Condition
+									)
+								);
+							?>
 						</div>
 						<div class="col-md-6 col-sm-6">
-                            <?= $validator->error('email'); ?>
-							<?= $form->textBox('email', array('id' => 'email', 'class' => 'form-control', 'placeholder' => $labels['email'])); ?>
+							<label for='date_dob'>Date</label>
+                            <?= "<span class='err-msg'>".$validator->error('date_bok')."</span>" ?>
+							<?=
+								$form->inputBox(
+									'date_bok',
+									array(
+										'id' => 'date_bok',
+										'class' => 'form-control',
+										'min' => date('Y-m-d'),
+										'max' => date('Y-m-d', strtotime('+30 days'))
+									),
+									'date'
+								);
+							?>
 						</div>
                         <div class="col-md-6 col-sm-6">
-							<?= $validator->error('mobile'); ?>
-                            <?= $form->textBox('mobile', array('id' => 'mobile', 'class' => 'form-control', 'placeholder' => $labels['mobile'])); ?>
-						</div>
-						<div class="col-md-6 col-sm-6">
-							<?= $validator->error('pass'); ?>
-                            <?= $form->passwordBox('pass', array('id' => 'pass', 'class' => 'form-control', 'placeholder' => $labels['pass'])); ?>
-						</div>
-                        <div class="col-md-6 col-sm-6">
-							<?= $validator->error('cpass'); ?>
-                            <?= $form->passwordBox('cpass', array('id' => 'cpass', 'class' => 'form-control', 'placeholder' => $labels['cpass'])); ?>
+							<label for='slot'>Slot</label>
+							<?= "<span class='err-msg'>".$validator->error('slot')."</span>" ?>
+                            <?=
+								$form->dropDownList(
+									'slot',
+									array(
+										'id' => 'slot',
+										'class' => 'form-control'
+									),
+									array(
+										'9:00AM - 10:00AM' => 'A',
+										'10:00AM - 11:00AM' => 'B',
+										'11:00AM - 12:00PM' => 'C',
+										'12:00PM - 1:00PM' => 'D',
+										'2:00PM - 3:00PM' => 'E',
+										'3:00PM - 4:00PM' => 'F',
+										'4:00PM - 5:00PM' => 'G',
+										'5:00PM - 6:00PM' => 'H'
+									)
+								);
+							?>
 						</div>
 						<div class="col-md-12 col-sm-12">
-							<button id="signup" class="btn btn-primary form-control" name="signup">SIGN UP</button>
-						</div>
-						<div class="text-center">
-							<a href="signin.php">Already have an account?</a>
+							<button id="book" class="btn btn-primary form-control" name="book">SIGN UP</button>
 						</div>
 					</form>
 				</div>
@@ -154,6 +203,14 @@
 	<script src="user/assets/js/2098/owl.carousel.min.js"></script>
 	<script src="user/assets/js/2098/custom.js"></script>
 	<script src="user/assets/js/2098/valid.js"></script>
+
+	<!-- OPTION SELECTOR REFRESH -->
+	<script>
+		function cellChange() {
+			var x = document.getElementById("id").value;
+			location.replace("book.php?id="+x);
+		}
+	</script>
 
 </body>
 

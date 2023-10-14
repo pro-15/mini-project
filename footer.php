@@ -55,7 +55,7 @@
 							<h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
 							<p>
 								Monday - Saturday
-								<span>06:00 AM - 10:00 PM</span>
+								<span>09:00 AM - 6:00 PM</span>
 							</p>
 							<p>
 								Sundays
@@ -74,7 +74,7 @@
 				<div class="col-md-12 col-sm-12 border-top">
 					<div class="col-md-4 col-sm-6">
 						<div class="copyright-text">
-							<p>Copyright &copy; 2023 Health Center | Design: Tooplate</p>
+							<p>Copyright &copy; <?= date("Y") ?> Health Center | Design: Tooplate</p>
 						</div>
 					</div>
 					<!-- <div class="col-md-6 col-sm-6">
@@ -106,6 +106,16 @@
 	<script src="user/assets/js/2098/owl.carousel.min.js"></script>
 	<script src="user/assets/js/2098/custom.js"></script>
 
+	<!-- <script>
+		$(window).scroll(function() {
+			let d = document.getElementById("MyTopNav");
+  			if ($(document).scrollTop() > 50) {
+    			d.style["height"] = "70px";
+  			} else {
+    			d.style["height"] = "120px";
+  			}
+		});
+	</script> -->
 </body>
 
 </html>

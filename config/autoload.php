@@ -12,21 +12,19 @@ else $path="c:wamp64/www/mini-project/";
 define("BASE_PATH", $path);
 
 
-
 //set your timezone here
 date_default_timezone_set('asia/kolkata');
 
+session_start();
+if(isset($_SESSION['setTime']) && time()-$_SESSION['setTime'] > 1800){
+    echo "<script>";
+    if($_SERVER['REQUEST_URI'] != "/mini-project/index.php") echo "alert('Session Expired');";
+    echo "location.replace('signout.php'); </script>";
+}
 
 
-
-
- session_start();
- require(BASE_PATH.'config/database.php'); 
- require( BASE_PATH .'classes/database.php'); 
- require( BASE_PATH .'classes/FormAssist.class.php'); 
- require(BASE_PATH.'classes/FormValidator.class.php'); 
- require( BASE_PATH .'classes/DataAccess.class.php');
- 
-
-
-?>    
+require(BASE_PATH.'config/database.php'); 
+require( BASE_PATH .'classes/database.php'); 
+require( BASE_PATH .'classes/FormAssist.class.php'); 
+require(BASE_PATH.'classes/FormValidator.class.php'); 
+require( BASE_PATH .'classes/DataAccess.class.php');
