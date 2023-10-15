@@ -10,7 +10,9 @@
 
     //Navigation Section
     $('.navbar-collapse a').on('click',function(){
-      $(".navbar-collapse").collapse('hide');
+      if ($(this).attr('id') !== 'proffile') {
+        $(".navbar-collapse").collapse('hide');
+      }
     });
 
 

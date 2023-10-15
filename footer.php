@@ -74,7 +74,7 @@
 				<div class="col-md-12 col-sm-12 border-top">
 					<div class="col-md-4 col-sm-6">
 						<div class="copyright-text">
-							<p>Copyright &copy; <?= date("Y") ?> Health Center | Design: Tooplate</p>
+							<h5>Copyright &copy; <?= date("Y") ?> Health Center</h5>
 						</div>
 					</div>
 					<!-- <div class="col-md-6 col-sm-6">
@@ -106,16 +106,37 @@
 	<script src="user/assets/js/2098/owl.carousel.min.js"></script>
 	<script src="user/assets/js/2098/custom.js"></script>
 
-	<!-- <script>
-		$(window).scroll(function() {
-			let d = document.getElementById("MyTopNav");
-  			if ($(document).scrollTop() > 50) {
-    			d.style["height"] = "70px";
-  			} else {
-    			d.style["height"] = "120px";
-  			}
-		});
-	</script> -->
+	<script>
+		function openList1(link) {
+    		var list = link.nextElementSibling; // Assuming the dropdown follows the link
+    		if (list.style.display === "none" || list.style.display === "") {
+        		list.style.display = "block";
+    		} else {
+        		list.style.display = "none";
+    		}
+		}
+		// function openList1() {
+    	// 	var list = document.getElementsByClassName("prof-drop");
+    	// 	if (list.style.display == "none"){
+    	// 	    list.style.display = "block";
+    	// 	}else{
+		//         list.style.display = "none";
+    	// 	}
+		// }
+		$(document).mouseup(function (e) { 
+            if ($(e.target).closest("#prof-drop").length === 0) { 
+                document.getElementById("prof-drop").style.display ="none"; 
+            } 
+        });
+		// $(window).scroll(function() {
+		// 	let d = document.getElementById("MyTopNav");
+  		// 	if ($(document).scrollTop() > 50) {
+    	// 		d.style["height"] = "70px";
+  		// 	} else {
+    	// 		d.style["height"] = "120px";
+  		// 	}
+		// });
+	</script>
 </body>
 
 </html>

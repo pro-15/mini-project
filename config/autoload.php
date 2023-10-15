@@ -19,7 +19,7 @@ session_start();
 if(isset($_SESSION['setTime']) && time()-$_SESSION['setTime'] > 1800){
     echo "<script>";
     if($_SERVER['REQUEST_URI'] != "/mini-project/index.php") echo "alert('Session Expired');";
-    echo "location.replace('signout.php'); </script>";
+    echo "location.replace('".BASE_URL."/config/signout.php'); </script>";
 }
 
 

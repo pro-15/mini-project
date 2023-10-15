@@ -398,8 +398,7 @@ header span i {
   color: #a5c422 !important;
 }
 
-.navbar-default .navbar-nav>li>a:hover,
-.navbar-default .navbar-nav>li>a:focus {
+.navbar-default .navbar-nav>li>a:hover {
   color: #a5c422;
   background-color: transparent;
 }
@@ -1093,6 +1092,10 @@ footer a:hover {
   .angle-up-btn {
     bottom: 10em;
   }
+
+  .menu {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 639px) {
@@ -1113,7 +1116,9 @@ footer a:hover {
     font-size: 11px;
     letter-spacing: 1px;
   }
-
+  .menu {
+    flex-direction: column;
+  }
 }
 
 
@@ -1331,8 +1336,101 @@ footer a:hover {
   color : #c80000;
 }
 
-.fa-space .fa {
-  margin-right: 0.1ch;
+.fa-space {
+  margin-right: 0.2ch;
+}
+
+
+/* flex dropdown */
+.menu
+{
+  margin: 0;
+  padding: 4px;
+  font-family: inherit;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.menu ul
+{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: left;
+}
+
+.menu ul li
+{
+  list-style: none;
+  padding: 4px;
+  position: relative;
+  transition: 0.5s;
+  display: block;
+}
+
+.menu ul li a
+{
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.menu ul li a:hover
+{
+  border-radius: 6px;
+}
+
+.menu ul li ul
+{
+  display: none;
+}
+
+.menu ul li ul
+{
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 25px;
+  background: #fff;
+  border-radius: 6px;
+  width: 100%;
+  min-width: 130px;
+  padding: 10px 2px;
+  /* box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.5); */
+}
+@media only screen and (max-width: 767px){
+  .menu {
+    overflow: visible !important;
+    overflow-x: hidden;
+  }
+  .menu ul li ul {
+    margin-top: 0px !important;
+    background: #d5f452;
+  }
+}
+
+
+/* Paragraph bold */
+
+p:hover {
+  font-weight: bold;
+}
+
+
+/* Navbar flex  */
+
+.nav.navbar-nav.navbar-right {
+  display: flex;
+  flex-direction: row;
+}
+
+@media  only screen and (max-width: 767px) {
+  ::-webkit-scrollbar-thumb {
+    background: #ffffff;
+  }
+  .nav.navbar-nav.navbar-right {
+    flex-direction: column;
+  }
 }
 
 /*
