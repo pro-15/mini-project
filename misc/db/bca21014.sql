@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 12, 2023 at 10:42 AM
+-- Generation Time: Oct 16, 2023 at 01:06 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -35,9 +35,16 @@ CREATE TABLE IF NOT EXISTS `book` (
   `date_gen` char(19) NOT NULL,
   `date_bok` char(10) NOT NULL,
   `slot` char(1) NOT NULL,
-  `status` int NOT NULL,
+  `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`bid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `book`
+--
+
+INSERT INTO `book` (`bid`, `pid`, `did`, `date_gen`, `date_bok`, `slot`, `status`) VALUES
+(2, 4, 2, '2023-10-14 20:16:22', '2023-10-24', 'A', 1);
 
 -- --------------------------------------------------------
 
@@ -71,6 +78,7 @@ INSERT INTO `dept` (`id`, `dept`, `dmg`, `stat`) VALUES
 DROP TABLE IF EXISTS `doc`;
 CREATE TABLE IF NOT EXISTS `doc` (
   `did` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL,
   `dname` varchar(30) NOT NULL,
   `dage` int NOT NULL,
   `dphon` char(10) NOT NULL,
@@ -82,9 +90,9 @@ CREATE TABLE IF NOT EXISTS `doc` (
 -- Dumping data for table `doc`
 --
 
-INSERT INTO `doc` (`did`, `dname`, `dage`, `dphon`, `stat`) VALUES
-(1, 'Abhidev', 25, '1234567890', 1),
-(2, 'Thomaskutty', 46, '9495748822', 1);
+INSERT INTO `doc` (`did`, `id`, `dname`, `dage`, `dphon`, `stat`) VALUES
+(1, 2, 'Abhidev', 25, '1234567890', 1),
+(2, 1, 'Thomaskutty', 46, '9495748822', 1);
 
 -- --------------------------------------------------------
 
@@ -104,14 +112,16 @@ CREATE TABLE IF NOT EXISTS `userdat` (
   PRIMARY KEY (`pid`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `mobile` (`mobile`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `userdat`
 --
 
 INSERT INTO `userdat` (`pid`, `fname`, `lname`, `email`, `mobile`, `pass`, `status`) VALUES
-(1, 'Aj', 'ks', 'ajks@mail.com', '9946884520', '098', 1);
+(1, 'Aj', 'ks', 'ajks@mail.com', '9946884520', '098', 1),
+(2, 'Kuttan', 'K C', 'kckutt@mail.com', '9999999999', 'kc', 1),
+(4, 'Tom', 'Kutty', 'tom@kutty.com', '1234567890', 'tom', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
