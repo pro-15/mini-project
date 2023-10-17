@@ -442,10 +442,15 @@ class DataAccess
             
             if(isset($config['srno']) && $config['srno']==true)
             {
-                $str.="<td>";
-                $str.=$srno++;
-                $str.="</td>";
-                
+				if(isset($config['scope']) && $config['scope'] == true) {
+					$str.="<th scope='row'>";
+					$str.=$srno++;
+                	$str.="</th>";
+				} else {
+                	$str.="<td>";
+                	$str.=$srno++;
+                	$str.="</td>";
+				}
             }
             
             
@@ -592,23 +597,14 @@ class DataAccess
                     if(!in_array($key,$config['hiddenfields']))
                     {
                         $str.="<td>".$val."</td>";
-                        
-                        
                     }
-                    
                 }
                 else
                     $str.="<td>".$val."</td>";
-                
-                }
-               
-                
+                }   
             }
-            
             if($actions!=null && is_array($actions))
             {
-                
-                
                 if((isset($config['actions_td']) && $config['actions_td']==false) || !isset($config['actions_td']))
                     $str.="<td>";
                 
@@ -617,7 +613,7 @@ class DataAccess
                     if(isset($config['actions_td']) && $config['actions_td']==true)
                        $str.="<td>";
                     
-                        $str.="<a href='".$act['link']."?";
+                        $str.=" <a href='".$act['link']."?";
                         foreach($act['params'] as $param=>$pvalue)
                         {
                             $str.=$param."=".$values[$pvalue]."&";
@@ -629,31 +625,9 @@ class DataAccess
                         {
                             $str.=$attr."='".$attrval."' ";
                         }
-                        $str.="> ";
-
-
-
-
-
-						//Not part of original code
-						//Not part of original code
-						//Not part of original code
-						switch($ind) {
-							case "delete" ; $str.="<i class='mdi mdi-delete'></i> ";
-								break;
-							case "edit" : $str.="<i class='mdi mdi-lead-pencil'></i> ";
-								break;
-						}
-						//Not part of original code
-						//Not part of original code
-						//Not part of original code
-
-
-
-						
-
-
-						$str.="</a>&nbsp;&nbsp;&nbsp;";
+                        $str.=">";
+						$str.=$act['label'];
+						$str.="</a>";
                     
                     if(isset($config['actions_td']) && $config['actions_td']==true)
                        $str.="</td>";   
