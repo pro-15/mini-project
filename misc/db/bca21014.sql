@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 16, 2023 at 01:06 PM
+-- Generation Time: Oct 19, 2023 at 04:23 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -56,7 +56,7 @@ DROP TABLE IF EXISTS `dept`;
 CREATE TABLE IF NOT EXISTS `dept` (
   `id` int NOT NULL AUTO_INCREMENT,
   `dept` varchar(30) NOT NULL,
-  `dmg` varchar(100) NOT NULL,
+  `dmg` varchar(200) NOT NULL,
   `stat` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -68,6 +68,27 @@ CREATE TABLE IF NOT EXISTS `dept` (
 INSERT INTO `dept` (`id`, `dept`, `dmg`, `stat`) VALUES
 (1, 'Otolaryngologist', '0d20e6111416a2dd7f6191d8d0cf6157_f00cd392d567ab9.png', 1),
 (2, 'Orthopedics', '21ff2d49071bf0081eb930805077061a_af744b3ff48ea4f.png', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dept2`
+--
+
+DROP TABLE IF EXISTS `dept2`;
+CREATE TABLE IF NOT EXISTS `dept2` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `dept` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `dept2`
+--
+
+INSERT INTO `dept2` (`id`, `dept`) VALUES
+(1, 'Otolaryngologist'),
+(2, 'Orthopedics');
 
 -- --------------------------------------------------------
 

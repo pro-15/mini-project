@@ -1,6 +1,5 @@
 <?php
-    require('../config/autoload.php');
-    include('header.html');
+    include('header.php');
 
     $file = new FileUpload();
     $elements = array("dname" => "", "dage" => "", "dphon" => "");
