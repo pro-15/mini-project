@@ -782,11 +782,11 @@ class DataAccess
 			// Actions
 			if ($actions != null && is_array($actions)) {
 				if ((isset($config['actions_td']) && $config['actions_td'] == false) || !isset($config['actions_td']))
-					$str .= "<td class='d-flex flex-row'>";
+					$str .= "<td> <div class='d-flex flex-row justify-content-evenly'>";
 
 				foreach ($actions as $ind => $act) {
 					if (isset($config['actions_td']) && $config['actions_td'] == true)
-						$str .= "<td class='d-flex flex-row'>";
+						$str .= "<td><div class='d-flex flex-row justify-content-evenly'>";
 					if ($act['post'] == true) {
 						$str .= "<form method='POST'>";
 						foreach ($act['params'] as $param => $pvalue) {
@@ -816,10 +816,10 @@ class DataAccess
 						$str .= "</a>";
 					}
 					if (isset($config['actions_td']) && $config['actions_td'] == true)
-						$str .= "</td>";
+						$str .= "</div></td>";
 				}
 				if ((isset($config['actions_td']) && $config['actions_td'] == false) || !isset($config['actions_td']))
-					$str .= "</td>";
+					$str .= "</div></td>";
 			}
 			$str .= "</tr>";
 		}

@@ -76,20 +76,19 @@
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-
       <li class="nav-item">
-        <a class="nav-link " href="<?=BASE_URL?>ad-min/dept.php">
+        <a class="nav-link <?php if ($_SERVER['REQUEST_URI'] != "/mini-project/ad-min/dept.php") echo "collapsed" ?>" href="<?= BASE_URL ?>ad-min/dept.php">
           <i class="ri ri-hospital-line"></i>
           <span>Departments</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="<?=BASE_URL?>ad-min/doc.php">
+        <a class="nav-link <?php if ($_SERVER['REQUEST_URI'] != "/mini-project/ad-min/doc.php") echo "collapsed" ?>" href="<?= BASE_URL ?>ad-min/doc.php">
           <i class="bi bi-person"></i>
           <span>Doctors</span>
         </a>
       </li>
-      
+
     </ul>
 
   </aside><!-- End Sidebar-->

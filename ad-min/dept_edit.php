@@ -17,7 +17,6 @@ $labels = array('dept' => "Department name", 'dmg' => "Department image");
 $rules = array(
     "dept" => array("required" => true, "minlength" => 3, "maxlength" => 30, "alphaonly" => true),
     "dmg" => array("filerequired" => true)
-
 );
 
 

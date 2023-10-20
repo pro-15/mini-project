@@ -46,20 +46,19 @@ $validator = new FormValidator($rules, $labels);
 if (isset($_POST["insert"])) {
     if ($validator->validate($_POST)) {
         if ($fileName = $file->doUploadRandom(
-                $_FILES['dmg'],
-                array('.jpg', '.png', '.jpeg'),
-                100000,
-                1,
-                '../uploads'
-            ))
-        {
+            $_FILES['dmg'],
+            array('.jpg', '.png', '.jpeg'),
+            100000,
+            1,
+            '../uploads/'
+        )) {
             $data = array(
                 'dname' => $_POST['dname'],
                 'dage' => $_POST['dage'],
                 'dphon' => $_POST['dphon'],
-                'dmg' => $fileName
+                'dmg' => $fileName,
             );
-            if ($dao->insert($data, "dept"))
+            if ($dao->insert($data, "doc2"))
                 $msg = "Success : Insert";
             else
                 $msg = "Failed : Insert";
@@ -70,96 +69,99 @@ if (isset($_POST["insert"])) {
 ?>
 
 <section class="section">
-<div class="row" id="proBanner">
+    <div class="row">
 
-<div class="col-lg-12 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Doctors List</h4>
-                <p class="card-description">
-                    List of all doctors
-                </p>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Age</th>
-                            <th>Phone</th>
-                            <th>Edit</th>
+        <!-- List -->
+		<div class="col-lg-8">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Doctors List</h5>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Image</th>
+                                <th scope="col" width="120px">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $actions = array(
+                                'edit' => array(
+                                    'post' => false,
+                                    'label' => "<i class='bi bi-pencil-fill'></i>",
+                                    'link' => 'doced.php',
+                                    'params' => array('docid' => 'docid'),
+                                    'attributes' => array('class' => 'btn btn-warning')
+                                ),
+                                'delete' => array(
+                                    'post' => true,
+                                    'label' => "<i class='bi bi-trash-fill'></i>",
+                                    'link' => 'doc_del.php',
+                                    'params' => array('id' => 'docid'),
+                                    'attributes' => array('class' => 'btn btn-danger')
+                                )
+                            );
+                            $config = array(
+                                'srno' => true,
+                                'hiddenfields' => array('docid'),
+                                'images' => array(array(
+                                    'field' => 'dmg',
+                                    'path' => '../uploads/',
+                                    'attributes' => array('height' => '100')
+                                ))
+                            );
+                            $join = array();
+                            $fields = array('docid', 'dname', 'dage', 'dphon', 'dmg');
+                            $users = $dao->selectAsTablePost($fields, 'doc2', 'stat = 1', $join, $actions, $config);
+                            echo $users;
+                            ?>
+                        </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
+        <!-- Add form -->
+		<div class="col-4">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Add Department</h5>
+					<form action="" method="POST" class="row g-3" enctype="multipart/form-data">
+                        <div class="col-12">
+                            <label for="dname">Name</label>
+                            <?= $form->textBox('dname', array('class' => 'form-control')); ?>
+                            <?= $validator->error('dname'); ?>
 
-                        $actions = array(
-                            'edit' => array('label' => 'Edit', 'link' => 'doc_edit.php', 'params' => array('id' => 'did'), 'attributes' => array('class' => 'btn btn-inverse-warning btn-sm')),
+                        </div>
+                        <div class="col-12">
+                            <label for="dage">Age</label>
 
-                            'delete' => array('label' => 'Delete', 'link' => 'doc_del.php', 'params' => array('id' => 'did'), 'attributes' => array('class' => 'btn btn-inverse-danger btn-sm'))
+                            <?= $form->textBox('dage', array('class' => 'form-control')); ?>
+                            <?= $validator->error('dage'); ?>
 
-                        );
+                        </div>
+                        <div class="col-12">
+                            <label for="dphon">Phone</label>
+                            <?= $form->textBox('dphon', array('class' => 'form-control')); ?>
+                            <?= $validator->error('dphon'); ?>
+                        </div>
+                        <div class="col-12">
+                            <label for="dmg">Image</label>
+                            <?= $form->fileField('dmg', array('class' => 'form-control')); ?>
+                            <?= $validator->error('dmg'); ?>
+                        </div>
+                        <div class="d-grid gap-2 mt-3">
+                            <button type="submit" class="btn btn-primary" name="insert">Submit</button>
+                        </div>
+                    </form>
+				</div>
+			</div>
+		</div>
 
-                        $config = array(
-                            'srno' => true,
-                            'hiddenfields' => array('did'),
-
-
-                        );
-
-
-                        $join = array();
-                        $fields = array('did', 'dname', 'dage', 'dphon');
-
-                        $users = $dao->selectAsTable($fields, 'doc', 'stat = 1', $join, $actions, $config);
-
-                        echo $users;
-
-
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
-
-    <div class="col-md-6 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Add Doctors</h4>
-                <form action="" method="POST" class="forms-sample" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="dname">Name</label>
-
-                        <?= $form->textBox('dname', array('class' => 'form-control')); ?>
-                        <?= $validator->error('dname'); ?>
-
-                    </div>
-                    <div class="form-group">
-                        <label for="dage">Age</label>
-
-                        <?= $form->textBox('dage', array('class' => 'form-control')); ?>
-                        <?= $validator->error('dage'); ?>
-
-                    </div>
-                    <div class="form-group">
-                        <label for="dphon">Phone</label>
-                        <?= $form->textBox('dphon', array('class' => 'form-control')); ?>
-                        <?= $validator->error('dphon'); ?>
-                    </div>
-                    <div class="col-12">
-						<label for="admg">Image</label>
-						<?= $form->fileField('dmg', array('class' => 'form-control', 'id' => 'admg')); ?>
-						<?= $validator->error('dmg'); ?>
-					</div>
-                    <div class="d-grid gap-2 mt-3">
-						<button type="submit" class="btn btn-primary" name="insert">Submit</button>
-					</div>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-</div>
 </section>
 <?php include("footer.html"); ?>

@@ -31,7 +31,7 @@ if (isset($_POST["insert"])) {
 }
 
 if (isset($_POST["delete"])) {
-	if ($dao->delete("dept2", "id = " . $_POST['id'])) $msg = "Success : Delete";
+	if ($dao->delete("dept2", "depid = " . $_POST['depid'])) $msg = "Success : Delete";
 	else $msg = "Failed : Delete";
 	echo "<script> alert('$msg');</script>";
 }
@@ -60,8 +60,8 @@ if (isset($_POST["delete"])) {
 							<tr>
 								<th scope="col">#</th>
 								<th scope="col">Department</th>
-								<th scope="col" width="100px">Edit</th>
-
+								<th scope="col" width="120px">Edit</th>
+	
 							</tr>
 						</thead>
 						<tbody>
@@ -70,25 +70,25 @@ if (isset($_POST["delete"])) {
 								'edit' => array(
 									'post' => false,
 									'label' => "<i class='bi bi-pencil-fill'></i>",
-									'link' => '',
-									'params' => array('id' => 'id'),
+									'link' => 'depted.php',
+									'params' => array('depid' => 'depid'),
 									'attributes' => array('class' => 'btn btn-warning')
 								),
 								'delete' => array(
 									'post' => true,
 									'label' => "<i class='bi bi-trash-fill'></i>",
 									'link' => '',
-									'params' => array('id' => 'id'),
+									'params' => array('depid' => 'depid'),
 									'attributes' => array('class' => 'btn btn-danger')
 								)
 							);
 							$config = array(
 								'srno' => true,
 								'scope' => true,
-								'hiddenfields' => array('id'),
+								'hiddenfields' => array('depid'),
 							);
 							$join = array();
-							$fields = array('id', 'dept');
+							$fields = array('depid', 'dept');
 							$users = $dao->selectAsTablePost($fields, 'dept2', 1 , $join, $actions, $config);
 							echo $users;
 							?>

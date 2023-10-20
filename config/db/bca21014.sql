@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 19, 2023 at 04:23 PM
+-- Generation Time: Oct 20, 2023 at 04:37 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -77,16 +77,16 @@ INSERT INTO `dept` (`id`, `dept`, `dmg`, `stat`) VALUES
 
 DROP TABLE IF EXISTS `dept2`;
 CREATE TABLE IF NOT EXISTS `dept2` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `depid` int NOT NULL AUTO_INCREMENT,
   `dept` varchar(30) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`depid`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `dept2`
 --
 
-INSERT INTO `dept2` (`id`, `dept`) VALUES
+INSERT INTO `dept2` (`depid`, `dept`) VALUES
 (1, 'Otolaryngologist'),
 (2, 'Orthopedics');
 
@@ -114,6 +114,33 @@ CREATE TABLE IF NOT EXISTS `doc` (
 INSERT INTO `doc` (`did`, `id`, `dname`, `dage`, `dphon`, `stat`) VALUES
 (1, 2, 'Abhidev', 25, '1234567890', 1),
 (2, 1, 'Thomaskutty', 46, '9495748822', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doc2`
+--
+
+DROP TABLE IF EXISTS `doc2`;
+CREATE TABLE IF NOT EXISTS `doc2` (
+  `docid` int NOT NULL AUTO_INCREMENT,
+  `depid` int NOT NULL,
+  `dname` varchar(30) NOT NULL,
+  `dage` int NOT NULL,
+  `dphon` char(10) NOT NULL,
+  `dmg` varchar(200) NOT NULL,
+  `stat` int NOT NULL DEFAULT '1',
+  PRIMARY KEY (`docid`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `doc2`
+--
+
+INSERT INTO `doc2` (`docid`, `depid`, `dname`, `dage`, `dphon`, `dmg`, `stat`) VALUES
+(1, 2, 'Kuttan', 25, '1234567890', '', 1),
+(2, 1, 'Kutty', 46, '9495748822', '', 1),
+(3, 0, 'Joseph', 44, '9988776655', '998fa78cbe8469397374a7c322858b4a_be0782cc5bfd00f83.jpg', 1);
 
 -- --------------------------------------------------------
 
