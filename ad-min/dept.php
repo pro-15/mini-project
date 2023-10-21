@@ -76,6 +76,7 @@ if (isset($_POST["delete"])) {
 								),
 								'delete' => array(
 									'post' => true,
+									'onsubmit' => 'delFun()',
 									'label' => "<i class='bi bi-trash-fill'></i>",
 									'link' => '',
 									'params' => array('depid' => 'depid'),
@@ -123,4 +124,9 @@ if (isset($_POST["delete"])) {
 
 	</div>
 </section>
+<script>
+        function delFun() {
+            return confirm('Are you sure you want to delete this?');
+        }
+</script>
 <?php include("footer.html"); ?>

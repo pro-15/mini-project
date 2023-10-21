@@ -788,7 +788,10 @@ class DataAccess
 					if (isset($config['actions_td']) && $config['actions_td'] == true)
 						$str .= "<td><div class='d-flex flex-row justify-content-evenly'>";
 					if ($act['post'] == true) {
-						$str .= "<form method='POST'>";
+						$str .= "<form method='POST' ";
+						if(isset($act['confirm']))
+							$str .= "onsubmit='return ".$act['confirm'].";'";
+						$str .= ">";
 						foreach ($act['params'] as $param => $pvalue) {
 							$str .= "<input type='hidden' name='$param' value=" . $values[$pvalue] . ">";
 						}

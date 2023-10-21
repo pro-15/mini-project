@@ -72,6 +72,11 @@ if (isset($_POST["insert"])) {
         } else echo $file->errors();
     }
 }
+if (isset($_POST["delete"])) {
+	if ($dao->delete("doc2", "docid = " . $_POST['docid'])) $msg = "Success : Delete";
+	else $msg = "Failed : Delete";
+	echo "<script> alert('$msg');</script>";
+}
 ?>
 <div class="pagetitle">
 	<h1>Doctors</h1>
@@ -166,9 +171,10 @@ if (isset($_POST["insert"])) {
                                 ),
                                 'delete' => array(
                                     'post' => true,
+                                    'confirm' => 'delFun()',
                                     'label' => "<i class='bi bi-trash-fill'></i>",
                                     'link' => 'doc_del.php',
-                                    'params' => array('id' => 'docid'),
+                                    'params' => array('docid' => 'docid'),
                                     'attributes' => array('class' => 'btn btn-danger')
                                 )
                             );
@@ -197,4 +203,9 @@ if (isset($_POST["insert"])) {
 
     </div>
 </section>
+<script>
+        function delFun() {
+            return confirm('Are you sure you want to delete this?');
+        }
+</script>
 <?php include("footer.html"); ?>
