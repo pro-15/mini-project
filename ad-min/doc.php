@@ -4,6 +4,7 @@ include('header.php');
 $dao = new DataAccess();
 $file = new FileUpload();
 $elements = array(
+    "depid" => "",
     "dname" => "",
     "dage" => "",
     "dphon" => "",
@@ -11,12 +12,16 @@ $elements = array(
 );
 $form = new FormAssist($elements, $_POST);
 $labels = array(
+    'depid' => 'Department',
     'dname' => "Name",
     'dage' => "Age",
     "dphon" => "Phone",
     'dmg' => 'Image'
 );
 $rules = array(
+    "depid" => array(
+        "required" => true
+    ),
     "dname" => array(
         "required" => true,
         "minlength" => 3,
@@ -53,6 +58,7 @@ if (isset($_POST["insert"])) {
             '../uploads/'
         )) {
             $data = array(
+                'depid' => $_POST['depid'],
                 'dname' => $_POST['dname'],
                 'dage' => $_POST['dage'],
                 'dphon' => $_POST['dphon'],
@@ -67,70 +73,39 @@ if (isset($_POST["insert"])) {
     }
 }
 ?>
+<div class="pagetitle">
+	<h1>Doctors</h1>
+	<nav>
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+			<li class="breadcrumb-item active">Doctors</li>
+		</ol>
+	</nav>
+</div><!-- End Page Title -->
 
 <section class="section">
     <div class="row">
 
-        <!-- List -->
-		<div class="col-lg-8">
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Doctors List</h5>
-					<table class="table table-hover">
-						<thead>
-							<tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Age</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">Image</th>
-                                <th scope="col" width="120px">Edit</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $actions = array(
-                                'edit' => array(
-                                    'post' => false,
-                                    'label' => "<i class='bi bi-pencil-fill'></i>",
-                                    'link' => 'doced.php',
-                                    'params' => array('docid' => 'docid'),
-                                    'attributes' => array('class' => 'btn btn-warning')
-                                ),
-                                'delete' => array(
-                                    'post' => true,
-                                    'label' => "<i class='bi bi-trash-fill'></i>",
-                                    'link' => 'doc_del.php',
-                                    'params' => array('id' => 'docid'),
-                                    'attributes' => array('class' => 'btn btn-danger')
-                                )
-                            );
-                            $config = array(
-                                'srno' => true,
-                                'hiddenfields' => array('docid'),
-                                'images' => array(array(
-                                    'field' => 'dmg',
-                                    'path' => '../uploads/',
-                                    'attributes' => array('height' => '100')
-                                ))
-                            );
-                            $join = array();
-                            $fields = array('docid', 'dname', 'dage', 'dphon', 'dmg');
-                            $users = $dao->selectAsTablePost($fields, 'doc2', 'stat = 1', $join, $actions, $config);
-                            echo $users;
-                            ?>
-                        </tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-
-        <!-- Add form -->
-		<div class="col-4">
+    <!-- Add form -->
+		<div class="col-6">
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Add Department</h5>
 					<form action="" method="POST" class="row g-3" enctype="multipart/form-data">
+                        <div class="col-12">
+                            <label for="depid">Department</label>
+                            <?=
+                                $form->dropDownList(
+                                    'depid',
+                                    array('class' => 'form-control'),
+                                    $dao->createOptions(
+                                        'dept', 'depid', 'dept2'
+                                    )
+                                );
+                            ?>
+                            <?= $validator->error('depid'); ?>
+
+                        </div>
                         <div class="col-12">
                             <label for="dname">Name</label>
                             <?= $form->textBox('dname', array('class' => 'form-control')); ?>
@@ -158,6 +133,64 @@ if (isset($_POST["insert"])) {
                             <button type="submit" class="btn btn-primary" name="insert">Submit</button>
                         </div>
                     </form>
+				</div>
+			</div>
+		</div>
+
+        <!-- List -->
+		<div class="col-lg-10">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Doctors List</h5>
+					<table class="table datatable">
+						<thead>
+							<tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Image</th>
+                                <th scope="col" width="120px">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $actions = array(
+                                'edit' => array(
+                                    'post' => false,
+                                    'label' => "<i class='bi bi-pencil-fill'></i>",
+                                    'link' => 'doced.php',
+                                    'params' => array('docid' => 'docid'),
+                                    'attributes' => array('class' => 'btn btn-warning')
+                                ),
+                                'delete' => array(
+                                    'post' => true,
+                                    'label' => "<i class='bi bi-trash-fill'></i>",
+                                    'link' => 'doc_del.php',
+                                    'params' => array('id' => 'docid'),
+                                    'attributes' => array('class' => 'btn btn-danger')
+                                )
+                            );
+                            $config = array(
+                                'srno' => true,
+                                'scope' => true,
+                                'hiddenfields' => array('docid'),
+                                'images' => array(array(
+                                    'field' => 'dmg',
+                                    'path' => '../uploads/',
+                                    'attributes' => array('height' => '100')
+                                ))
+                            );
+                            $join = array(
+                                'dept2' => array('doc2.depid = dept2.depid','join')
+                            );
+                            $fields = array('docid', 'dept', 'dname', 'dage', 'dphon', 'dmg');
+                            $users = $dao->selectAsTablePost($fields, 'doc2', 1, $join, $actions, $config);
+                            echo $users;
+                            ?>
+                        </tbody>
+					</table>
 				</div>
 			</div>
 		</div>

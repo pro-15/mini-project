@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 20, 2023 at 04:37 PM
+-- Generation Time: Oct 21, 2023 at 07:46 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `dept2` (
   `depid` int NOT NULL AUTO_INCREMENT,
   `dept` varchar(30) NOT NULL,
   PRIMARY KEY (`depid`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `dept2`
@@ -88,7 +88,8 @@ CREATE TABLE IF NOT EXISTS `dept2` (
 
 INSERT INTO `dept2` (`depid`, `dept`) VALUES
 (1, 'Otolaryngologist'),
-(2, 'Orthopedics');
+(2, 'Orthopedics'),
+(8, 'Pediatrician');
 
 -- --------------------------------------------------------
 
@@ -138,9 +139,9 @@ CREATE TABLE IF NOT EXISTS `doc2` (
 --
 
 INSERT INTO `doc2` (`docid`, `depid`, `dname`, `dage`, `dphon`, `dmg`, `stat`) VALUES
-(1, 2, 'Kuttan', 25, '1234567890', '', 1),
-(2, 1, 'Kutty', 46, '9495748822', '', 1),
-(3, 0, 'Joseph', 44, '9988776655', '998fa78cbe8469397374a7c322858b4a_be0782cc5bfd00f83.jpg', 1);
+(1, 2, 'Kuttan', 25, '1234567890', '04f67d4a5bfd0283833cd3f7de17808a_b7aa02bf10ad87.jpg', 1),
+(2, 1, 'Kutty', 46, '9495748822', 'ce6c97013beb051753120de581bf39e5_c5cdbf473f8092f53a4.jpg', 1),
+(3, 8, 'Joseph', 44, '9988776655', '998fa78cbe8469397374a7c322858b4a_be0782cc5bfd00f83.jpg', 1);
 
 -- --------------------------------------------------------
 
