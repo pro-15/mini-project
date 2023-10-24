@@ -75,7 +75,7 @@
 				'email' => $_POST['email'],
 				'pass' => $_POST['pass']
 			);
-			if ($dao->insert($data, 'userdat')) {
+			if ($dao->insert($data, 'pat')) {
                 echo "<script> alert('Sign in to continue'); </script>";
                 echo "<script> location.replace('signin.php'); </script>";
             }

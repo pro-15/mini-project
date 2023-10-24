@@ -57,10 +57,21 @@
 			<!-- MENU LINKS -->
 			<div class="menu collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#about" class="smoothScroll" title="About Us">About Us</a></li>
-					<li><a href="#team" class="smoothScroll" title="Doctors">Doctors</a></li>
-					<li><a href="#news" class="smoothScroll" title="News">News</a></li>
-					<li><a href="user/book.php" title="Book an Appointment"><b>Book Now</b></a></li>
+					<li>
+						<a href="index.php" class="smoothScroll" title="About Us">Home</a>
+					</li>
+					<li>
+						<a href="specialities.php" class="smoothScroll" title="Specialities">Specialities</a>
+					</li>
+					<li>
+						<a href="doctors.php" class="smoothScroll" title="Doctors">Doctors</a>
+					</li>
+					<li>
+						<a href="#news" class="smoothScroll" title="News">News</a>
+					</li>
+					<li>
+						<a href="user/book.php" title="Book an Appointment"><b>Book Now</b></a>
+					</li>
 					<li>
 					<?php 
 						if(isset($_SESSION['pid'])) {

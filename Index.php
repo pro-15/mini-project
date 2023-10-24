@@ -10,7 +10,7 @@
 							<div class="col-md-offset-1 col-md-10">
 								<h3>Let's make your life happier</h3>
 								<h1>Healthy Living</h1>
-								<a href="#team" class="section-btn btn btn-default smoothScroll">Meet Our Doctors</a>
+								<a href="doctors.php" class="section-btn btn btn-default smoothScroll">Meet Our Doctors</a>
 							</div>
 						</div>
 					</div>

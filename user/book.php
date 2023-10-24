@@ -1,6 +1,6 @@
 <?php
     require("../config/autoload.php");
-    if(!isset($_SESSION['pid'])) echo "<script>location.replace('signin.php');</script>";
+    //if(!isset($_SESSION['pid'])) echo "<script>location.replace('signin.php');</script>";
 	//header("Location : signin.php");
 ?>
 <!DOCTYPE html>

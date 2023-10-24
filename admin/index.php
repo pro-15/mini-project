@@ -1,7 +1,2 @@
-<?php
-    include "header.html";
-    ?>
-
-<?php
-    include('footer.html');
-    ?>
+<?php require('header.php'); ?>
+<?php require('footer.html'); ?>

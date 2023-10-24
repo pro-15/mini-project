@@ -51,9 +51,9 @@
 	if (isset($_POST['signin'])) {
 		if ($validator->validate($_POST)) {
 			$data = array('email' => $_POST['email'], 'pass' => $_POST['password']);
-			if ($info = $dao->login($data, 'userdat')) {
+			if ($info = $dao->login($data, 'pid')) {
 				$_SESSION['pid'] = $info['pid'];
-				$_SESSION['name'] = $info['fname'].' '.$info['lname'];
+				$_SESSION['name'] = $info['fname'] . ' ' . $info['lname'];
 				$_SESSION['setTime'] = time();
 				//$_SESSION['email'] = $info['email'];
 				//$_SESSION['fname'] = $info['fname'];
@@ -92,13 +92,13 @@
 					<form method="POST" class="form-group form-group-lg">
 						<div class="col-md-12 col-sm-12">
 							<label for='email'>Email</label>
-							<?= "<span class='err-msg'>".$validator->error('email')."</span>" ?>
+							<?= "<span class='err-msg'>" . $validator->error('email') . "</span>" ?>
 							<?= $form->textBox('email', array('id' => 'email', 'class' => 'form-control', 'placeholder' => 'Email')); ?>
 							<!-- <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email"> -->
 						</div>
 						<div class="col-md-12 col-sm-12">
 							<label for='password'>Password</label>
-							<?= "<span class='err-msg'>".$validator->error('password')."</span>" ?>
+							<?= "<span class='err-msg'>" . $validator->error('password') . "</span>" ?>
 							<?= $form->passwordBox('password', array('id' => 'password', 'class' => 'form-control', 'placeholder' => 'Password')); ?>
 							<!-- <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password"> -->
 						</div>
