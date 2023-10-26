@@ -207,7 +207,7 @@ if (isset($_POST["delete"])) {
                             $join = array(
                                 'dept' => array('doc.depid = dept.depid','join')
                             );
-                            $fields = array('docid', 'dmg', 'fname', 'lname', 'dept', 'dage', 'dphon');
+                            $fields = array('docid', 'dmg', 'fname', 'lname', 'dept', 'dob', 'dphon');
                             $users = $dao->selectAsTablePost($fields, 'doc', 1, $join, $actions, $config);
                             echo $users;
                             ?>
